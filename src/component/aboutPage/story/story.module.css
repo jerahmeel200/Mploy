@@ -1,0 +1,99 @@
+.container {
+  /* margin-top: 30px; */
+  /* padding: 50px 80px; */
+
+  /* margin-top: -90px; */
+  /* height: 100%; */
+  background-size: cover;
+  background-position: center;
+
+  padding: 10px 0px 0px 0px; /* Adjust padding as needed */
+}
+
+.title {
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
+
+  color: rgba(11, 26, 62, 1);
+  font-family: "montserrat", serif;
+}
+
+.post {
+  margin-top: 200px;
+  margin: 120px auto 0 auto;
+
+  max-width: 1370px;
+  align-items: center;
+  /* gap: 50px; */
+  padding: 30px 40px 30px 40px;
+}
+
+.imgContainer {
+  flex: 1;
+
+  /* position: relative; */
+  /* width: 55%; */
+}
+
+.image {
+  object-fit: contain;
+  width: 488px;
+  height: 360px;
+}
+
+.textContainer {
+  /* flex: 1; */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  gap: 50px;
+  /* min-width: 45%; */
+}
+
+.postTitle {
+  font-size: 40px;
+}
+
+.postDesc {
+  color: rgba(79, 79, 79, 1);
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "montserrat", serif;
+  font-weight: 500;
+  line-height: 32px;
+  max-width: 550px;
+  width: 100%;
+  /* padding: 100px; */
+}
+
+@media screen and (max-width: 1280px) {
+  .title {
+    font-size: 72px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    font-size: 64px;
+  }
+
+  .imgContainer {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 48px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title {
+    font-size: 40px;
+  }
+  .textContainer {
+    gap: 5px;
+  }
+}
