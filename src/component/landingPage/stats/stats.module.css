@@ -1,26 +1,71 @@
 .container {
-  /* padding-top: 50px; */
+  padding-top: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
+
+/* Wrapper styles */
 .wrapper {
   display: flex;
+
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 0 auto;
-  gap: 100px;
+  gap: 10px;
+  padding: 20px;
+}
+
+/* Stats styles */
+.stats {
+  flex: 1 1 300px;
+  max-width: 300px;
 }
 
 .stats h1 {
   color: rgba(11, 26, 62, 1);
   font-weight: 700;
   font-size: 48px;
-  line-height: 58.51px;
-  font-family: "montserrat", serif;
+  font-family: "montserrat", sans-serif;
+  margin-bottom: 10px;
 }
+
 .stats p {
   color: rgba(79, 79, 79, 1);
   font-weight: 500;
-  font-size: 16px;
-  line-height: 17.5px;
-  font-family: "montserrat", serif;
+  font-size: 17.5px;
+  line-height: 1.4;
+  font-family: "montserrat", sans-serif;
+}
+
+@media screen and (max-width: 1280px) {
+  .stats h1 {
+    font-size: 38px;
+  }
+  .stats p {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .stats h1 {
+    font-size: 35px;
+  }
+  .stats p {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .stats h1 {
+    font-size: 30px;
+  }
+  .stats p {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .stats h1 {
+    font-size: 29px;
+  }
 }

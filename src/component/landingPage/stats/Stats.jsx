@@ -24,8 +24,8 @@ const Stats = () => {
     <div className={styles.container}>
       <div className="main">
         <div className={styles.wrapper}>
-          {stats.map((item) => (
-            <div className={styles.stats}>
+          {stats.map((item, index) => (
+            <div className={styles.stats} key={index}>
               <h1>{item.amount}</h1>
               <p>{item.details}</p>
             </div>
