@@ -1,7 +1,5 @@
 import React from "react";
 import styles from "./hero.module.css";
-import Image from "next/image";
-import Stats from "../../stats/Stats";
 
 const Hero = () => {
   return (
