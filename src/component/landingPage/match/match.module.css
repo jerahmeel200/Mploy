@@ -1,13 +1,7 @@
 .container {
-  /* margin-top: 30px; */
-  /* padding: 50px 80px; */
-
-  /* margin-top: -90px; */
-  /* height: 100%; */
   background-size: cover;
   background-position: center;
-
-  padding: 10px 0px 0px 0px; /* Adjust padding as needed */
+  padding: 50px 20px; /* Adjust padding as needed */
 }
 
 .title {
@@ -17,33 +11,27 @@
   letter-spacing: -2%;
   color: rgba(11, 26, 62, 1);
   font-family: "montserrat", serif;
-  /* width: 100%;
-  max-width: 577px; */
 }
 
 .post {
-  margin-top: 200px;
-  margin: 120px auto 0 auto;
-
-  max-width: 1370px;
+  margin-top: 120px;
+  max-width: 100%;
+  display: flex;
   /* align-items: center; */
-  /* gap: 50px; */
-  padding: 30px 10px 30px 40px;
+  justify-content: space-between;
+  gap: 70px;
+  padding: 30px 10px;
 }
 
 .imgContainer {
   flex: 1;
-
-  /* position: relative; */
-  /* width: 55%; */
 }
 
 .image {
-  object-fit: contain;
+  object-fit: cover;
   width: 100%;
-  max-width: 488px;
-  max-height: 360px;
-  height: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .textContainer {
@@ -63,57 +51,57 @@
   font-size: 18px;
   font-weight: 500;
   font-family: "montserrat", serif;
-  font-weight: 500;
   line-height: 32px;
-  width: 100%;
-  max-width: 509px;
+  max-width: 100%;
 }
 
 @media screen and (max-width: 1280px) {
   .title {
-    font-size: 72px;
+    font-size: 48px;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .title {
-    font-size: 64px;
+    font-size: 36px;
   }
 
   .post {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px;
   }
 
   .textContainer {
     order: 2;
     text-align: center;
-    margin-top: 20px; /* Adjust spacing if needed */
+    margin-top: 20px;
+    min-width: 100%;
   }
 
   .imgContainer {
     order: 1;
     text-align: center;
+    min-width: 100%;
   }
-  /* .image {
-    object-fit: contain;
-    width: 420px;
-    height: 200px;
-  } */
+
+  .image {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .title {
-    font-size: 48px;
+    font-size: 24px;
   }
 }
 
 @media screen and (max-width: 640px) {
   .title {
-    font-size: 40px;
+    font-size: 20px;
   }
+
   .textContainer {
     gap: 5px;
   }
