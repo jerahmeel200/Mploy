@@ -26,6 +26,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
+        <Stats />
       </div>
       {/* </div> */}
     </>
