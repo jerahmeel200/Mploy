@@ -4,9 +4,24 @@ import styles from "./hero.module.css";
 const Hero = () => {
   return (
     <>
-      <div className={styles.container}>
+      <div
+        className={styles.container}
+        style={
+          {
+            //   backgroundColor: "red",
+          }
+        }
+      >
         <div className="main">
-          <div className={styles.post}>
+          <div
+            className={styles.post}
+            style={{
+              display: "flex",
+              width: "100%",
+              //   alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
             <div className={styles.textContainer}>
               <h1 className={styles.title}>
                 Transform your recruitment process.
@@ -16,7 +31,7 @@ const Hero = () => {
                 recruiters, to source and hire candidates faster.
               </p>
               <div className={styles.btn}>
-                <button>Read More</button>
+                <button>Get started</button>
               </div>
             </div>
             <div className={styles.imgContainer}>
@@ -24,9 +39,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        {/* <Stats /> */}
       </div>
-      {/* </div> */}
     </>
   );
 };

@@ -4,46 +4,56 @@
     rgba(212, 232, 255, 1),
     rgba(255, 255, 255, 1)
   );
+
+  padding: 60px 100px 60px 100px; /* Adjust padding as needed */
+  position: relative;
   background-size: cover;
   background-position: center;
-  padding: 100px 20px; /* Adjust padding as needed */
-  position: relative;
 }
 
 .title {
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 68px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 48px;
   letter-spacing: -2%;
   color: rgba(11, 26, 62, 1);
   font-family: "montserrat", serif;
-  max-width: 100%;
 }
 
 .post {
-  margin-top: 120px;
+  margin-top: 70px;
+  max-width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  align-items: flex-start;
   justify-content: space-between;
-  gap: 30px;
+  gap: 80px;
+  padding: 30px 10px;
 }
 
 .imgContainer {
-  flex: 1 0 45%; /* Adjust as needed */
+  width: 100%;
+  max-width: 848px;
+  height: 100%;
+  max-height: 360px;
+  margin-left: -120px;
 }
 
 .image {
-  max-width: 648px;
-  height: auto;
-  object-fit: cover;
-  width: 100%;
+  .image {
+    width: 100%;
+    max-width: 848px;
+    /* height: 100%; */
+  }
 }
 
 .textContainer {
-  flex: 1 0 50%; /* Adjust as needed */
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-width: 45%;
+  width: 100%;
+  max-width: 505px;
 }
 
 .postTitle {
@@ -51,12 +61,10 @@
 }
 
 .postDesc {
+  margin-top: 20px;
   font-size: 20px;
-  font-family: "montserrat", serif;
-  font-weight: 500;
-  line-height: 32px;
-  letter-spacing: -2%;
-  max-width: 100%;
+  font-family: "Montserrat", sans-serif;
+  line-height: 30px;
 }
 
 .btn button {
@@ -75,47 +83,45 @@
   border: none;
   text-align: center;
 }
-
 @media screen and (max-width: 1280px) {
   .title {
-    font-size: 38px;
+    font-size: 48px;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .title {
-    font-size: 35px;
+    font-size: 36px;
   }
 
   .post {
     flex-direction: column;
+    justify-content: center;
     align-items: center;
   }
 
   .textContainer {
     order: 2;
     text-align: center;
-    margin-top: 20px; /* Adjust margin as needed */
+    margin-top: 20px;
+    min-width: 100%;
   }
 
   .imgContainer {
     order: 1;
     text-align: center;
+    min-width: 100%;
   }
 
-  .postDesc {
-    text-align: center;
+  .image {
+    max-width: 100%;
+    height: auto;
   }
 }
 
 @media screen and (max-width: 768px) {
   .title {
-    font-size: 25px;
-    text-align: center;
-  }
-
-  .post {
-    margin-top: 80px; /* Adjust margin as needed */
+    font-size: 24px;
   }
 }
 

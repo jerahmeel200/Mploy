@@ -62,6 +62,22 @@
   .stats p {
     font-size: 10px;
   }
+
+  .wrapper {
+    animation: scroll 10s linear infinite;
+    width: 250px;
+    align-items: center;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(0);
+    }
+
+    100% {
+      transform: translateX(calc(-250px * 3));
+    }
+  }
 }
 
 @media screen and (max-width: 640px) {
