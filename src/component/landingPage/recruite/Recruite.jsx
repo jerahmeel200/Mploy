@@ -21,7 +21,7 @@ const Recruite = () => {
           }}
         >
           <div className={styles.imgContainer}>
-            <img src="/board.png" alt="" className={styles.image} />
+            <img src="/board2.png" alt="" className={styles.image} />
           </div>
           <div className={styles.textContainer}>
             <h1 className={styles.title}>Easy to use recruitment software.</h1>

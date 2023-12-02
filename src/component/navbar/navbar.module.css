@@ -1,10 +1,15 @@
 .container {
-  padding: 30px 0;
+  /* padding: 10px 0; */
   border: none;
   width: 100%;
+  max-width: 1440px;
+  padding: 0px 100px;
+  margin: auto;
   z-index: 2;
   box-sizing: border-box;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .wrapper {
@@ -12,6 +17,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  margin: 30px 0;
 }
 
 .logo h1 {
@@ -32,19 +39,20 @@
 }
 
 .btn button {
+  margin-top: 30px;
   background-color: rgba(47, 107, 246, 1);
   color: rgba(255, 255, 255, 1);
   font-size: 16px;
   line-height: 24px;
-  width: 155px;
+  width: 183px;
   height: 48px;
   border-radius: 4px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  font-family: "roboto", serif;
   border: none;
+  text-align: center;
 }
 
 @media screen and (max-width: 1280px) {

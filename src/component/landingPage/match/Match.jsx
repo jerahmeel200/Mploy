@@ -21,7 +21,7 @@ const Match = () => {
           }}
         >
           <div className={styles.imgContainer}>
-            <img src="/match.png" alt="" className={styles.image} />
+            <img src="/match2.png" alt="" className={styles.image} />
           </div>
           <div className={styles.textContainer}>
             <h1 className={styles.title}>

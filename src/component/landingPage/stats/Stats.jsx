@@ -24,12 +24,22 @@ const Stats = () => {
     <div className={styles.container}>
       <div className="main">
         <div className={styles.wrapper}>
-          {stats.map((item, index) => (
-            <div className={styles.stats} key={index}>
-              <h1>{item.amount}</h1>
-              <p>{item.details}</p>
-            </div>
-          ))}
+          <div className={styles.one}>
+            <h1>1,000+</h1>
+            <p>Recruitment processes managed</p>
+          </div>
+          <div className={styles.two}>
+            <h1>50+</h1>
+            <p>Active recruitment team</p>
+          </div>
+          <div className={styles.three}>
+            <h1>500+</h1>
+            <p>Satisfied user</p>
+          </div>
+          <div className={styles.four}>
+            <h1>10</h1>
+            <p>countries</p>
+          </div>
         </div>
       </div>
     </div>

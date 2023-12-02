@@ -13,12 +13,10 @@
   flex-direction: column;
   gap: 14px;
   width: 50%;
+  max-width: 352px;
 }
 
 .logo h1 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
   font-size: 24px;
   line-height: 48px;
   letter-spacing: 5%;

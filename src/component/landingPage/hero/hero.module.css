@@ -5,10 +5,12 @@
     rgba(255, 255, 255, 1)
   );
 
-  padding: 60px 100px 60px 100px; /* Adjust padding as needed */
-  position: relative;
+  padding: 150px 100px 50px 100px;
+
   background-size: cover;
   background-position: center;
+  margin: auto;
+  position: relative;
 }
 
 .title {
@@ -20,17 +22,16 @@
   font-family: "montserrat", serif;
 }
 
-.post {
+.wrapper {
   margin-top: 70px;
-  max-width: 100%;
+  width: 100%;
   display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 80px;
-  padding: 30px 10px;
+  justify-content: center;
+  /* align-items: flex-start; */
 }
 
 .imgContainer {
+  /* background-color: brown; */
   width: 100%;
   max-width: 848px;
   height: 100%;
@@ -39,19 +40,15 @@
 }
 
 .image {
-  .image {
-    width: 100%;
-    max-width: 848px;
-    /* height: 100%; */
-  }
+  width: 110%;
+  height: 100%;
+  /* width: 100%; */
+  max-width: 1000px;
+  /* height: 100%; */
 }
 
 .textContainer {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 45%;
+  /* background-color: blue; */
   width: 100%;
   max-width: 505px;
 }
@@ -83,6 +80,7 @@
   border: none;
   text-align: center;
 }
+
 @media screen and (max-width: 1280px) {
   .title {
     font-size: 48px;

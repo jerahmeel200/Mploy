@@ -9,19 +9,26 @@
   display: flex;
 
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
-  gap: 10px;
+
   padding: 20px;
 }
 
 /* Stats styles */
 .stats {
   flex: 1 1 300px;
-  max-width: 300px;
+  max-width: 271px;
 }
 
-.stats h1 {
+.two h1 {
+  color: rgba(11, 26, 62, 1);
+  font-weight: 700;
+  font-size: 48px;
+  font-family: "montserrat", sans-serif;
+  margin-bottom: 10px;
+}
+.one h1 {
   color: rgba(11, 26, 62, 1);
   font-weight: 700;
   font-size: 48px;
@@ -29,12 +36,61 @@
   margin-bottom: 10px;
 }
 
-.stats p {
+.one p {
   color: rgba(79, 79, 79, 1);
   font-weight: 500;
-  font-size: 17.5px;
+  font-size: 16px;
   line-height: 1.4;
   font-family: "montserrat", sans-serif;
+}
+.three h1 {
+  color: rgba(11, 26, 62, 1);
+  font-weight: 700;
+  font-size: 48px;
+  font-family: "montserrat", sans-serif;
+  margin-bottom: 10px;
+}
+
+.three p {
+  color: rgba(79, 79, 79, 1);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4;
+  font-family: "montserrat", sans-serif;
+}
+.four h1 {
+  color: rgba(11, 26, 62, 1);
+  font-weight: 700;
+  font-size: 48px;
+  font-family: "montserrat", sans-serif;
+  margin-bottom: 10px;
+}
+
+.four p {
+  color: rgba(79, 79, 79, 1);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4;
+  font-family: "montserrat", sans-serif;
+}
+.two p {
+  color: rgba(79, 79, 79, 1);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4;
+  font-family: "montserrat", sans-serif;
+}
+.one {
+  max-width: 271;
+}
+.two {
+  max-width: 200;
+}
+.three {
+  max-width: 123;
+}
+.four {
+  max-width: 79;
 }
 
 @media screen and (max-width: 1280px) {

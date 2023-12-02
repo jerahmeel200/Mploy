@@ -10,9 +10,9 @@
 .items {
   flex: 0 0 auto;
   /* Define individual product card styles */
-  width: 500px;
-  margin-right: 10px;
-
+  width: 556px;
+  margin-right: 20px;
+  border-radius: 10px;
   /* Additional styles for product card design */
   background-color: rgba(234, 248, 254, 1);
   padding: 40px 30px;

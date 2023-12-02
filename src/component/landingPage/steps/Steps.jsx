@@ -14,20 +14,12 @@ const Steps = () => {
               gravida quam ac . Varius condimentum vivamus consequat ac aenean
               netus facilisis cursus ante.
             </p>
+            <div className={styles.btn}>
+              <button>Get started</button>
+            </div>
           </div>
           <div className={styles.stepsContainer}>
-            <div className={styles.steps}>
-              <img src="/check.png" alt="" />
-              <p>Run campaign</p>
-            </div>
-            <div className={styles.steps}>
-              <img src="/check.png" alt="" />
-              <p>Manage candidates</p>
-            </div>
-            <div className={styles.steps}>
-              <img src="/check.png" alt="" />
-              <p>e-Mploy</p>
-            </div>
+            <img className={styles.image} src="/steps.png" alt="" />
           </div>
         </div>
       </div>
