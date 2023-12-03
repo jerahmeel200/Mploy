@@ -1,13 +1,13 @@
 .wrapper {
   display: flex;
-
+  width: 100%;
   justify-content: space-between;
 }
 
 .imgContainer {
   margin-left: -160px;
   max-width: 825px;
-  height: auto;
+  height: 917px;
 }
 .textContainer {
   /* display: flex;
@@ -74,4 +74,5 @@
 .container {
   margin-top: 160px;
   margin-bottom: 160px;
+  max-width: 1440px;
 }
