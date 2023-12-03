@@ -9,7 +9,6 @@ const Footer = () => {
         background: "rgba(11, 26, 62, 1)",
         paddingLeft: "50px",
         paddingright: "50px",
-        height: "100%",
       }}
     >
       <div className="main">
