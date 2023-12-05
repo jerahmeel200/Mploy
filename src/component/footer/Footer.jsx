@@ -5,6 +5,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <footer
+      className={styles.footer}
       style={{
         background: "rgba(11, 26, 62, 1)",
         paddingLeft: "50px",
