@@ -121,12 +121,12 @@
 @media screen and (max-width: 767px) {
   /* ... (previous media query styles) */
 
-  .formContainer {
+  .form .formContainer {
     grid-template-columns: 1fr;
     padding: 15px;
   }
 
-  .nameFields {
+  .top.bottom {
     grid-template-columns: 1fr;
   }
 }
