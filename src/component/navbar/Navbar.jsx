@@ -25,9 +25,9 @@ const Navbar = () => {
             Contact us
           </Link>
         </div>
-        <div className={styles.btn}>
+        <Link href="/login" className={styles.btn}>
           <button>Log in</button>
-        </div>
+        </Link>
         <Hamburger />
       </div>
     </div>
