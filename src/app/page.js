@@ -1,3 +1,4 @@
+import Footer from "@/component/footer/Footer";
 import Campaign from "@/component/landingPage/campaign/Campaign";
 import Hero from "@/component/landingPage/hero/Hero";
 import Match from "@/component/landingPage/match/Match";
