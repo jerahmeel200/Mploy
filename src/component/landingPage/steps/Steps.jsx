@@ -12,7 +12,7 @@ const Steps = () => {
               euismod ipsum elementum justo arcu egestas etiam. Amet amet est
               arcu nmauris est. Amet amet tortor tincidunt eget tincidunt
               gravida quam ac . Varius condimentum vivamus consequat ac aenean
-              netus facilisis cursus ante.
+              netus facilisis cursus attr
             </p>
             <div className={styles.btn}>
               <button>Get started</button>
