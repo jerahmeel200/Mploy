@@ -34,7 +34,7 @@ const Campaign = () => {
             </p>
           </div>
           <div className={styles.imgContainer}>
-            <img src="/campaign.png" alt="" className={styles.image} />
+            <img src="/board3.png" alt="" className={styles.image} />
           </div>
         </div>
       </div>

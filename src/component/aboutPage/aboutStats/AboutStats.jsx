@@ -1,27 +1,48 @@
-import React from "react";
+"use client";
+
+import React, { useState } from "react";
+import Counter from "../../../reuse/Counter";
 import styles from "./aboutStats.module.css";
+
 const AboutStats = () => {
   const stats = [
     {
-      amount: "100",
-      details: " Total employees",
+      initialValue: 0,
+      targetValue: 100,
+      step: 1,
+      intervalDuration: 100,
+      details: "Total employees",
     },
     {
-      amount: "10",
-      details: "Nationlities",
+      initialValue: 0,
+      targetValue: 10,
+      step: 1,
+      intervalDuration: 200,
+      details: "Nationalities",
     },
     {
-      amount: "5",
+      initialValue: 0,
+      targetValue: 5,
+      step: 1,
+      intervalDuration: 300,
       details: "Languages",
     },
   ];
+
   return (
     <div className={styles.container}>
       <div className="main">
         <div className={styles.wrapper}>
-          {stats.map((item) => (
-            <div className={styles.stats}>
-              <h1>{item.amount}</h1>
+          {stats.map((item, index) => (
+            <div className={styles.stats} key={index}>
+              <h1>
+                <Counter
+                  initialValue={item.initialValue}
+                  targetValue={item.targetValue}
+                  step={item.step}
+                  intervalDuration={item.intervalDuration}
+                />
+              </h1>
               <p>{item.details}</p>
             </div>
           ))}
