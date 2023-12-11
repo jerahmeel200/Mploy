@@ -31,7 +31,7 @@ const LoginPage = () => {
             </div>
           </div>
           <div className={styles.btn}>
-            <button>continue</button>
+            <button>Continue</button>
           </div>
         </div>
       </div>
