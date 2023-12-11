@@ -31,7 +31,9 @@ const LoginPage = () => {
             </div>
           </div>
           <div className={styles.btn}>
-            <button>continue</button>
+            <a href="https://mploy-dashboard.vercel.app/auth/login">
+              <button>Continue</button>
+            </a>
           </div>
         </div>
       </div>
