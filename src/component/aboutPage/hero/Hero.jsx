@@ -14,16 +14,15 @@ const Hero = () => {
       >
         <div className="main">
           <div className={styles.post}>
+            <div className={styles.textContainer}>
+              <h1 className={styles.title}>Attractive recruitment process</h1>
+            </div>
             <div
-              className={styles.textContainer}
               style={{
                 width: "100%",
                 maxWidth: "683px",
               }}
             >
-              <h1 className={styles.title}>Attractive recruitment process</h1>
-            </div>
-            <div>
               <p className={styles.desc}>
                 Lorem ipsum dolor sit amet consectetur. pharetra morbi euismod
                 ipsum elementum justoarcu egestas etiam. Amet amet est arcu
