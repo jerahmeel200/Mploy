@@ -4,7 +4,7 @@ const Steps = () => {
   return (
     <div className={styles.container}>
       <div className="main">
-        <div className={styles.post}>
+        <div className={styles.wrapper}>
           <div className={styles.textContainer}>
             <h1 className={styles.title}>Recruit in 3 easy steps</h1>
             <p className={styles.postDesc}>
