@@ -25,7 +25,9 @@ const Navbar = () => {
             Contact us
           </Link>
         </div>
-        <Link href="/login" className={styles.btn}>
+        <Link
+          href="https://mploy-dashboard.vercel.app/auth/login"
+          className={styles.btn}>
           <button>Log in</button>
         </Link>
         <Hamburger />
@@ -34,5 +36,4 @@ const Navbar = () => {
     // </div>
   );
 };
-
 export default Navbar;
