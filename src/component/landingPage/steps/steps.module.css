@@ -28,8 +28,13 @@
   display: flex;
   justify-content: center;
   /* background-color: green; */
-  max-width: 550px;
-  width: 100%;
+  /* max-width: 550px;
+  width: 100%; */
+}
+
+.image {
+  object-fit: contain;
+  width: 550px;
 }
 /* .stepsContainer,
 .textContainer {
@@ -85,6 +90,10 @@
   .container {
     height: auto;
   }
+  .image {
+    object-fit: contain;
+    width: 400px;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -113,5 +122,15 @@
   .stepsContainer {
     max-width: 100%;
     padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 640px) {
+  .image {
+    object-fit: contain;
+    width: 300px;
   }
 }

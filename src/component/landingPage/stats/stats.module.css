@@ -123,6 +123,10 @@
     animation: scroll 10s linear infinite;
     width: 250px;
     align-items: center;
+    /* gap: 500px; */
+  }
+  .one {
+    max-width: 271;
   }
 
   @keyframes scroll {
