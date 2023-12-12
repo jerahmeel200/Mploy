@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useState } from "react";
 import Counter from "../../../reuse/Counter";
 import styles from "./aboutStats.module.css";

@@ -18,8 +18,8 @@
   font-family: "montserrat", serif;
 }
 .stats p {
-  width: 683px;
-  /* width: 100%; */
+  max-width: 683px;
+  width: 100%;
   color: rgba(79, 79, 79, 1);
   font-weight: 500;
   font-size: 20px;
