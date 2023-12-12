@@ -108,7 +108,7 @@
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "roboto", sans-serif;
 }
 .label {
   font-family: "roboto", sans-serif;
@@ -116,6 +116,26 @@
   font-size: 13px;
   margin-bottom: 10px;
   line-height: 16px;
+}
+
+.info {
+  margin-top: 20px;
+}
+.info p {
+  color: rgba(51, 51, 51, 1);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  font-family: "roboto", sans-serif;
+  margin-bottom: 20px;
+}
+.blue {
+  margin-left: 5px;
+  color: rgba(47, 107, 246, 1);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 16px;
+  font-family: "roboto", sans-serif;
 }
 /* Media query for smaller screens */
 

@@ -13,12 +13,12 @@ const Contact = () => {
             Amet amet tortor tincidunt eget tincidunt gravida nmauris est. Amet
             amet tortor tincidunt eget tincidunt gravida quam ac .
           </p>
-          <div>
+          <div className={styles.info}>
             <p>
-              Contact us: <span>+234 682992000</span>
+              Contact us: <span className={styles.blue}>+234 682992000</span>
             </p>
             <p>
-              Email us: <span> info@mploy.com</span>
+              Email us: <span className={styles.blue}> info@mploy.com</span>
             </p>
           </div>
         </div>
