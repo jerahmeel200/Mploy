@@ -139,9 +139,7 @@
 }
 /* Media query for smaller screens */
 
-@media screen and (max-width: 767px) {
-  /* ... (previous media query styles) */
-
+@media screen and (max-width: 768px) {
   .form .formContainer {
     grid-template-columns: 1fr;
     padding: 15px;
@@ -149,5 +147,8 @@
 
   .top.bottom {
     grid-template-columns: 1fr;
+  }
+  .wrapper {
+    flex-direction: column;
   }
 }

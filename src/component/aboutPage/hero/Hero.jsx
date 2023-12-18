@@ -33,7 +33,9 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <AboutStats />
+        <div className={styles.stats}>
+          <AboutStats />
+        </div>
       </div>
     </>
   );

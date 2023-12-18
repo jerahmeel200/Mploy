@@ -45,3 +45,9 @@
 /* .textContainer {
   width: 748px;
 } */
+
+@media screen and (max-width: 768px) {
+  .stats {
+    display: none;
+  }
+}
