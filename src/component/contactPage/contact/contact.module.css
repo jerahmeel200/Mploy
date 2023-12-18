@@ -29,6 +29,9 @@
 }
 
 .textContainer {
+}
+
+.formContainer {
   width: 50%;
 }
 /* Updated CSS */
@@ -37,7 +40,7 @@
 
 .form {
   border: 4px solid rgba(234, 248, 254, 1);
-  max-width: 608px;
+  width: 608px;
   padding: 20px;
   box-sizing: border-box;
   padding-bottom: 30px;
@@ -138,17 +141,45 @@
   font-family: "roboto", sans-serif;
 }
 /* Media query for smaller screens */
-
+/* Media query for smaller screens and adjustments for larger screens */
+/* Media query for smaller screens and adjustments for larger screens */
 @media screen and (max-width: 768px) {
-  .form .formContainer {
-    grid-template-columns: 1fr;
-    padding: 15px;
+  .container {
+    padding: 100px 30px 30px 30px;
   }
 
-  .top.bottom {
-    grid-template-columns: 1fr;
-  }
   .wrapper {
     flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .form {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+
+  .formContainer {
+    display: block;
+    width: 100%;
+  }
+
+  .input,
+  .emailInput,
+  .messageInput,
+  .btn button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .label {
+    font-size: 12px;
+  }
+  .textContainer {
+    text-align: center;
+    padding-bottom: 50px;
+  }
+  .title {
+    font-size: 30px;
   }
 }

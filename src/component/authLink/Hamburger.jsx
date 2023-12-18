@@ -14,6 +14,14 @@ const Hamburger = () => {
         <div className={styles.line}></div>
       </div>
 
+      {open && (
+        <div className={styles.responsiveMenu}>
+          <Link href="/">Homepage</Link>
+          <Link href="/">About</Link>
+          <Link href="/">Contact</Link>
+        </div>
+      )}
+
       {/* <div className={styles.responsiveMenu}>
         <Link href="/" className={styles.link}>
           Home

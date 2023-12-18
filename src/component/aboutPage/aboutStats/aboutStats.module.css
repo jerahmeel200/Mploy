@@ -15,7 +15,7 @@
   font-weight: 700;
   font-size: 48px;
   line-height: 58.51px;
-  font-family: "montserrat", serif;
+  font-family: "montserrat", sans-serif;
 }
 .stats p {
   max-width: 683px;
@@ -24,5 +24,8 @@
   font-weight: 500;
   font-size: 20px;
   line-height: 32px;
-  font-family: "montserrat", serif;
+  font-family: "montserrat", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
 }
