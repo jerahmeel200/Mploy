@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./navbar.module.css";
 import Link from "next/link";
 import Hamburger from "../authLink/Hamburger";
+import { Search, ShoppingCart, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   return (
@@ -27,7 +28,8 @@ const Navbar = () => {
         </div>
         <Link
           href="https://mploy-dashboard.vercel.app/auth/login"
-          className={styles.btn}>
+          className={styles.btn}
+        >
           <button>Log in</button>
         </Link>
         <Hamburger />

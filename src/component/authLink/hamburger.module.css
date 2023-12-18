@@ -33,6 +33,12 @@
   z-index: 999;
 }
 
+@media screen and (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+}
+
 @media screen and (max-width: 640px) {
   .burger {
     display: flex;
