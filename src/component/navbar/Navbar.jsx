@@ -7,6 +7,7 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 
+import MobileDrawer from "./MobileDrawer";
 const Navbar = () => {
   const navLinks = [
     {
@@ -131,18 +132,14 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
+
           <Link href="https://mploy-dashboard.vercel.app/auth/login">
             <div className={styles.btn}>
               <button>Log in</button>
             </div>
           </Link>
-          <motion.div
-            className={styles.menu}
-            variants={hideNavItemsVariant}
-            onClick={() => setMobileNavOpen(true)}
-          >
-            <Menu />
-          </motion.div>
+
+          <MobileDrawer />
         </div>
       </div>
       <div className="main">
@@ -150,12 +147,10 @@ const Navbar = () => {
           <motion.div
             variants={mobileMenuVariant}
             className={styles.mobileMenu}
-            animate={mobileNavOpen ? "opened" : "closed"}
-          >
+            animate={mobileNavOpen ? "opened" : "closed"}>
             <motion.button
               variants={fadeInVariant}
-              onClick={() => setMobileNavOpen(false)}
-            >
+              onClick={() => setMobileNavOpen(false)}>
               <X />
             </motion.button>
             <motion.div variants={ulVariant}>
