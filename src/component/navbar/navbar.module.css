@@ -141,13 +141,15 @@
   }
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1000px) {
   /* .links {
     justify-content: flex-end;
   } */
-  .links {
+  .links,
+  .btn {
     display: none;
   }
+
   .wrapper {
     padding: 30px;
   }

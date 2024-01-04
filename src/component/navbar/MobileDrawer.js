@@ -217,29 +217,20 @@ export default function MobileDrawer() {
 
   return (
     <>
-      <div ref={scope} style={{ zIndex: 10000 }}>
+      <div ref={scope} style={{ zIndex: 10000 }} className="mobileContainer">
         <Menu close={() => setIsOpen(false)} />
         <MenuToggle toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />
       </div>
 
       <style jsx>{`
-        .refresh {
-          padding: 5px;
-          position: absolute;
-          border: 1px dottedred;
-          border-radius: 5px;
-          width: 20px;
-          height: 20px;
-          top: 10px;
-          right: 10px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          cursor: pointer;
+        .mobileContainer {
+          display: none;
         }
 
-        .refresh path {
-          fill: red;
+        @media screen and (max-width: 1000px) {
+          .mobileContainer {
+            display: flex;
+          }
         }
       `}</style>
     </>
