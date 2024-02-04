@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import styles from "./getStarted.module.css";
+import Button from "@/reuse/Button/Button";
 const GetStarted = () => {
   return (
     <div className={styles.container}>
@@ -9,9 +11,11 @@ const GetStarted = () => {
         ipsum elementum justo arcu egestas etiam. Amet amet est arcu nmauris
         est. Amet amet tortor
       </p>
-      <div className={styles.btn}>
-        <button>Get started</button>
-      </div>
+      <Button
+        title="Get started"
+        href="https://mploy-dashboard.vercel.app/auth/login"
+        mt="3vh"
+      />
     </div>
   );
 };

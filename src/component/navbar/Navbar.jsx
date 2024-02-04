@@ -8,6 +8,7 @@ import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
 
 import MobileDrawer from "./MobileDrawer";
+import Button from "@/reuse/Button/Button";
 const Navbar = () => {
   const navLinks = [
     {
@@ -120,10 +121,14 @@ const Navbar = () => {
 
   return (
     <>
+      <style jsx>{``}</style>
+
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.logo}>
-            <h1>Mploy</h1>
+            <Link href={"/"}>
+              <img src="/logo_blue_transparent.png" />
+            </Link>
           </div>
           <div className={styles.links}>
             {navLinks.map((item) => (
@@ -132,12 +137,10 @@ const Navbar = () => {
               </Link>
             ))}
           </div>
-
-          <Link href="https://mploy-dashboard.vercel.app/auth/login">
-            <div className={styles.btn}>
-              <button>Log in</button>
-            </div>
-          </Link>
+          <Button
+            title="Log in"
+            href="https://mploy-dashboard.vercel.app/auth/login"
+          />
 
           <MobileDrawer />
         </div>

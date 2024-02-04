@@ -10,8 +10,7 @@ const HeroSection = () => {
           {
             //   backgroundColor: "red",
           }
-        }
-      >
+        }>
         <div className="main">
           <div className={styles.post}>
             <div className={styles.textContainer}>

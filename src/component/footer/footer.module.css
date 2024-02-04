@@ -20,11 +20,10 @@
   max-width: 352px;
 }
 
-.logo h1 {
-  font-size: 24px;
-  line-height: 48px;
-  letter-spacing: 5%;
-  font-family: "suez one", serif;
+.logo img {
+  width: 85px;
+  object-fit: contain;
+  margin-bottom: 20px;
 }
 
 .desc {

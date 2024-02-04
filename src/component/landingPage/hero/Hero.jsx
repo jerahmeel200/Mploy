@@ -1,6 +1,7 @@
+"use client";
 import React from "react";
 import styles from "./hero.module.css";
-
+import Button from "@/reuse/Button/Button";
 const Hero = () => {
   return (
     <>
@@ -10,8 +11,7 @@ const Hero = () => {
           {
             //   backgroundColor: "red",
           }
-        }
-      >
+        }>
         <div className={styles.wrapper}>
           <div className={styles.textContainer}>
             <h1 className={styles.title}>
@@ -21,9 +21,15 @@ const Hero = () => {
               Talent Acquisition System built for hiring managers and
               recruiters, to source and hire candidates faster.
             </p>
-            <div className={styles.btn}>
-              <button>Get started</button>
-            </div>
+            {/* <div className={styles.btn}>
+              <button></button>
+            </div> */}
+
+            <Button
+              title="Get started"
+              href="https://mploy-dashboard.vercel.app/auth/login"
+              mt="3vh"
+            />
           </div>
           <div className={styles.imgContainer}>
             <img src="/hero.png" alt="" className={styles.image} />

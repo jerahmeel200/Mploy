@@ -19,14 +19,12 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  margin: 30px 0;
+  margin: 10px 0;
 }
 
-.logo h1 {
-  font-family: "suez one", serif;
-  font-size: 24px;
-  font-weight: 500;
-  color: rgba(11, 26, 62, 1);
+.logo img {
+  width: 65px;
+  object-fit: contain;
 }
 
 .links {

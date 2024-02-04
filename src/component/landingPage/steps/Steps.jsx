@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import styles from "./steps.module.css";
+import Button from "@/reuse/Button/Button";
 const Steps = () => {
   return (
     <div className={styles.container}>
@@ -14,9 +16,11 @@ const Steps = () => {
               gravida quam ac . Varius condimentum vivamus consequat ac aenean
               netus facilisis cursus attr
             </p>
-            <div className={styles.btn}>
-              <button>Get started</button>
-            </div>
+            <Button
+              title="Get started"
+              href="https://mploy-dashboard.vercel.app/auth/login"
+              mt="3vh"
+            />
           </div>
           <div className={styles.stepsContainer}>
             <img className={styles.image} src="/steps.png" alt="" />

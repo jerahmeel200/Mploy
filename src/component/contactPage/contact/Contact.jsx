@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import styles from "./contact.module.css";
+import Button from "@/reuse/Button/Button";
 
 const Contact = () => {
   return (
@@ -78,9 +80,12 @@ const Contact = () => {
                   placeholder="Type here"
                 />
               </div>
-              <div className={styles.btn}>
-                <button>Submit</button>
-              </div>
+              <Button
+                width="100%"
+                title="Submit"
+                href="https://mploy-dashboard.vercel.app/auth/login"
+                mt="3vh"
+              />
             </div>
           </form>
         </div>

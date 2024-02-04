@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import styles from "./easySteps.module.css";
+import Button from "@/reuse/Button/Button";
 
 const EasySteps = () => {
   const steps = [
@@ -42,9 +44,11 @@ const EasySteps = () => {
               </div>
             </div>
           ))}
-          <div className={styles.btn}>
-            <button>get started</button>
-          </div>
+          <Button
+            title="Get started"
+            href="https://mploy-dashboard.vercel.app/auth/login"
+            mt="3vh"
+          />
         </div>
       </div>
     </div>
