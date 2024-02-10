@@ -1,99 +1,113 @@
 .container {
-  /* margin-top: 30px; */
-  /* padding: 50px 80px; */
+  padding: 100px 0;
+}
 
-  /* margin-top: -90px; */
-  /* height: 100%; */
-  background-size: cover;
-  background-position: center;
+.post {
+  margin-top: 100px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  padding: 30px 0;
+}
 
-  padding: 10px 0px 0px 0px; /* Adjust padding as needed */
+.post_reverse {
+  flex-direction: row-reverse;
 }
 
 .title {
   font-size: 40px;
+  line-height: 54px;
   font-weight: 600;
-  line-height: 48px;
-
   color: rgba(11, 26, 62, 1);
   font-family: "montserrat", serif;
 }
-
-.post {
-  margin-top: 200px;
-  margin: 120px auto 0 auto;
-
-  max-width: 1370px;
-  align-items: center;
-  /* gap: 50px; */
-  padding: 30px 40px 30px 40px;
+.postDesc {
+  color: rgba(79, 79, 79, 1);
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "montserrat", serif;
+  line-height: 32px;
+  max-width: 100%;
 }
-
 .imgContainer {
   flex: 1;
-
-  /* position: relative; */
-  /* width: 55%; */
 }
 
 .image {
-  object-fit: contain;
-  width: 488px;
-  height: 360px;
+  object-fit: cover;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .textContainer {
-  /* flex: 1; */
+  flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  gap: 50px;
-  /* min-width: 45%; */
+  gap: 20px;
 }
 
 .postTitle {
   font-size: 40px;
 }
 
-.postDesc {
-  color: rgba(79, 79, 79, 1);
-  font-size: 18px;
-  font-weight: 500;
-  font-family: "montserrat", serif;
-  font-weight: 500;
-  line-height: 32px;
-  max-width: 550px;
-  width: 100%;
-  /* padding: 100px; */
-}
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 100px 0;
+  }
+  .post {
+    gap: 50px;
+  }
 
-@media screen and (max-width: 1280px) {
   .title {
-    font-size: 72px;
+    font-size: 34px;
+    line-height: 46px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .postDesc {
+    font-size: 20px;
+    line-height: 32px;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .title {
-    font-size: 64px;
+  .post {
+    flex-direction: column;
+    gap: 50px;
   }
 
-  .imgContainer {
-    display: none;
+  .title {
+    text-align: center;
+  }
+  .postDesc {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 900px) {
+  .container {
+    padding-top: 0px;
+  }
+
+  .title {
+    font-size: 32px;
+    line-height: 45px;
+  }
+  .postDesc {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 600px) {
   .title {
-    font-size: 48px;
+    font-size: 28px;
+    line-height: 35px;
   }
-}
-
-@media screen and (max-width: 640px) {
-  .title {
-    font-size: 40px;
-  }
-  .textContainer {
-    gap: 5px;
+  .postDesc {
+    font-size: 14px;
+    line-height: 24px;
   }
 }

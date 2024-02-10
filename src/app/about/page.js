@@ -11,7 +11,6 @@ const AboutUsPage = () => {
     <div>
       <Navbar />
       <Hero />
-      <Mission />
       <Story />
       <GetStarted />
       <Footer />

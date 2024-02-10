@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./hero.module.css";
 import AboutStats from "../aboutStats/AboutStats";
+import Stats from "@/component/landingPage/stats/Stats";
 const Hero = () => {
   return (
     <>
@@ -10,8 +11,7 @@ const Hero = () => {
           {
             //   backgroundColor: "red",
           }
-        }
-      >
+        }>
         <div className="main">
           <div className={styles.post}>
             <div className={styles.textContainer}>
@@ -21,9 +21,8 @@ const Hero = () => {
               style={{
                 width: "100%",
                 maxWidth: "683px",
-              }}
-            >
-              <p className={styles.desc}>
+              }}>
+              <p className={styles.postDesc}>
                 Lorem ipsum dolor sit amet consectetur. pharetra morbi euismod
                 ipsum elementum justoarcu egestas etiam. Amet amet est arcu
                 nmauris est. Amet amet tortor tincidunt eget tincidunt gravida
@@ -33,9 +32,8 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className={styles.stats}>
-          <AboutStats />
-        </div>
+
+        <Stats showAboutStats />
       </div>
     </>
   );
