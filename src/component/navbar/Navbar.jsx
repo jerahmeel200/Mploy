@@ -4,8 +4,6 @@
 import React, { useState } from "react";
 import styles from "./navbar.module.css";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
-import { motion } from "framer-motion";
 
 import MobileDrawer from "./MobileDrawer";
 import Button from "@/reuse/Button/Button";
@@ -32,10 +30,6 @@ const Navbar = () => {
       link: "/contact",
     },
   ];
-
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
-
-  console.log("opened", mobileNavOpen);
 
   return (
     <>

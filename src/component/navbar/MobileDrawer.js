@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useAnimate, stagger } from "framer-motion";
 import { useRouter } from "next/navigation";
-import Link from "next/link";
+import styles from "./MobileDrawer.module.css";
 
 const navData = [
   { link: "/", title: "Home" },
@@ -22,7 +22,7 @@ function Menu({ close = () => null }) {
 
   return (
     <>
-      <nav className="menu">
+      <nav className={styles.menu}>
         <ul>
           <img src="/logo_white_transparent.png" />
 
@@ -36,89 +36,6 @@ function Menu({ close = () => null }) {
           })}
         </ul>
       </nav>
-
-      <style jsx>{`
-        .menu {
-          position: fixed;
-          z-index: 9999;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          width: 100%;
-          max-width: calc(100vw - 150px);
-          background: #2f6bf6;
-          transform: translateX(-100%);
-          will-change: transform;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          z-index: 4434343;
-          height: 100vh;
-        }
-
-        .menu ul {
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          padding: 15px;
-        }
-
-        .menu li a {
-          color: #fafafa;
-          display: block;
-          transform-origin: -20px 50%;
-          font-weight: bold;
-          font-size: 27px;
-          line-height: 48px;
-          padding: 0 10px;
-          will-change: transform, opacity, filter;
-          text-decoration: none;
-          text-align: left;
-          cursor: pointer;
-        }
-
-        @media screen and (max-width: 700px) {
-          .menu {
-            max-width: calc(100vw - 150px);
-          }
-
-          .menu li a {
-            font-size: 20px;
-            line-height: 40px;
-          }
-        }
-
-        .menu ul,
-        .menu li {
-          list-style: none;
-          margin: 0;
-        }
-
-        .menu img {
-          width: 80px;
-          margin-bottom: 20px;
-          position: absolute;
-          top: 30px;
-          left: 30px;
-        }
-
-        .button {
-          border: none;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          cursor: pointer;
-
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background: #ffffff00;
-          padding: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-      `}</style>
     </>
   );
 }
@@ -136,20 +53,24 @@ const Path = (props) => (
 const MenuToggle = ({ toggle, isOpen }) => {
   return (
     <>
-      <button onClick={toggle} className="button">
+      <button onClick={toggle} className={styles.button}>
         <svg width="23" height="18" viewBox="0 0 23 18">
           <Path
             d="M 2 2.5 L 20 2.5"
-            className="top"
+            className={styles.top}
             variants={{
               closed: { d: "M 2 2.5 L 20 2.5" },
               open: { d: "M 3 16.5 L 17 2.5" },
             }}
           />
-          <Path d="M 2 9.423 L 20 9.423" opacity="1" className="middle" />
+          <Path
+            d="M 2 9.423 L 20 9.423"
+            opacity="1"
+            className={styles.middle}
+          />
           <Path
             d="M 2 16.346 L 20 16.346"
-            className="bottom"
+            className={styles.bottom}
             variants={{
               closed: { d: "M 2 16.346 L 20 16.346" },
               open: { d: "M 3 2.5 L 17 16.346" },
@@ -235,22 +156,13 @@ export default function MobileDrawer() {
 
   return (
     <>
-      <div ref={scope} style={{ zIndex: 10000 }} className="mobileContainer">
+      <div
+        ref={scope}
+        style={{ zIndex: 10000 }}
+        className={styles.mobileContainer}>
         <Menu close={() => setIsOpen(false)} />
         <MenuToggle toggle={() => setIsOpen(!isOpen)} isOpen={isOpen} />
       </div>
-
-      <style jsx>{`
-        .mobileContainer {
-          display: none;
-        }
-
-        @media screen and (max-width: 1000px) {
-          .mobileContainer {
-            display: flex;
-          }
-        }
-      `}</style>
     </>
   );
 }
