@@ -39,13 +39,10 @@ const Tested = () => {
     },
   ];
   return (
-    <section
-      style={{
-        padding: "50px 0",
-      }}
-    >
-      <div className="main">
-        <h1 className={styles.title}>Tested and trusted</h1>
+    <section>
+      <div className={styles.main}>
+        <h1 className={styles.title}>Tested and trusted </h1>
+        <br />
         <div className={styles.container}>
           {items.map((item, index) => (
             <div className={styles.items} key={index}>
