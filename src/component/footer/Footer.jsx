@@ -6,13 +6,7 @@ import Link from "next/link";
 import Button from "@/reuse/Button/Button";
 const Footer = () => {
   return (
-    <footer
-      className={styles.footer}
-      style={{
-        background: "rgba(11, 26, 62, 1)",
-        paddingLeft: "50px",
-        paddingright: "50px",
-      }}>
+    <footer className={styles.footer}>
       <div className="main">
         <div className={styles.container}>
           <div className={styles.info}>
@@ -40,6 +34,7 @@ const Footer = () => {
                   display: "flex",
                   gap: "20px",
                   marginTop: "100px",
+                  flexWrap: "wrap",
                 }}>
                 <p
                   style={{
