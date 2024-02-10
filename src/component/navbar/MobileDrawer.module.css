@@ -15,16 +15,16 @@
   will-change: transform;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   z-index: 4434343;
   height: 100vh;
+  padding-left: 20px;
 }
 
 .menu ul {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  padding: 15px;
 }
 
 .menu li a {
@@ -43,7 +43,7 @@
 
 @media screen and (max-width: 700px) {
   .menu {
-    max-width: calc(100vw - 150px);
+    max-width: calc(100vw - 120px);
   }
 
   .menu li a {
@@ -63,7 +63,7 @@
   margin-bottom: 20px;
   position: absolute;
   top: 30px;
-  left: 30px;
+  left: 20px;
 }
 
 .button {
