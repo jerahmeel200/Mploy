@@ -2,6 +2,7 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  gap: 30px;
 }
 
 .imgContainer {
@@ -12,7 +13,6 @@
 
 .textContainer {
   margin-top: 50px;
-  padding-right: 30px;
 }
 
 .textContainer .texts:not(:last-child) {
@@ -77,28 +77,82 @@
   max-width: 1440px;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1330px) {
+  .imgContainer {
+    margin-left: -120px;
+    max-width: 565px;
+    height: 617px;
+  }
+  .imgContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .heading h1 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+
+  .heading h2 {
+    font-size: 26px;
+    line-height: 40px;
+  }
+
+  .desc p {
+    font-size: 16px;
+    line-height: 32px;
+  }
+}
+
+@media screen and (max-width: 900px) {
   .wrapper {
     flex-direction: column;
     align-items: center;
-    padding: 0 30px;
-  }
-  .imgContainer {
-    display: none;
+    justify-content: center;
   }
 
+  .imgContainer {
+    margin-left: 0px;
+    max-width: 90%;
+    height: 100%;
+  }
   .textContainer {
-    margin-top: 0;
-    padding-right: 0;
-    /* text-align: center; */
-    margin-left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .texts {
+    margin-bottom: 30px;
+  }
+
+  .textContainer .texts:not(:last-child) {
+    padding-bottom: 0px;
   }
 
   .heading {
-    margin-left: 0;
+    margin-left: 0px;
+    gap: 22px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .heading h1 {
+    font-size: 40px;
+    line-height: 50px;
   }
 
-  .desc {
-    max-width: 100%;
+  .heading h2 {
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  .desc p {
+    font-size: 14px;
+    line-height: 20px;
   }
 }

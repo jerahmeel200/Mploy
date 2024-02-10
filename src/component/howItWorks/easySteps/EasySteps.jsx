@@ -2,6 +2,7 @@
 import React from "react";
 import styles from "./easySteps.module.css";
 import Button from "@/reuse/Button/Button";
+import { Slide, Fade } from "react-awesome-reveal";
 
 const EasySteps = () => {
   const steps = [
