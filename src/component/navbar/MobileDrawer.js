@@ -8,6 +8,11 @@ const navData = [
   { link: "/about", title: "About us" },
   { link: "/works", title: "How it works" },
   { link: "/contact", title: "Contact Us" },
+  {
+    link: "https://mploy-dashboard.vercel.app/auth/login",
+    title: "Login",
+    topPadding: true,
+  },
 ];
 
 function Menu({ close = () => null }) {
@@ -28,7 +33,10 @@ function Menu({ close = () => null }) {
 
           {navData.map((x) => {
             return (
-              <li key={x?.title} onClick={() => gox(x)}>
+              <li
+                key={x?.title}
+                onClick={() => gox(x)}
+                style={{ paddingTop: x?.topPadding ? 30 : undefined }}>
                 <a>{x?.title}</a>
                 <br />
               </li>
