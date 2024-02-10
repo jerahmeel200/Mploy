@@ -78,28 +78,6 @@ const MenuToggle = ({ toggle, isOpen }) => {
           />
         </svg>
       </button>
-      <style jsx>{`
-        .button {
-          border: none;
-          -webkit-user-select: none;
-          -moz-user-select: none;
-          -ms-user-select: none;
-          cursor: pointer;
-
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background: #ffffff00;
-          padding: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .button path {
-          fill: #2f6bf6;
-        }
-      `}</style>
     </>
   );
 };
