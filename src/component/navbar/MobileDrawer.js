@@ -57,20 +57,16 @@ const MenuToggle = ({ toggle, isOpen }) => {
         <svg width="23" height="18" viewBox="0 0 23 18">
           <Path
             d="M 2 2.5 L 20 2.5"
-            className={styles.top}
+            className={"top"}
             variants={{
               closed: { d: "M 2 2.5 L 20 2.5" },
               open: { d: "M 3 16.5 L 17 2.5" },
             }}
           />
-          <Path
-            d="M 2 9.423 L 20 9.423"
-            opacity="1"
-            className={styles.middle}
-          />
+          <Path d="M 2 9.423 L 20 9.423" opacity="1" className={"middle"} />
           <Path
             d="M 2 16.346 L 20 16.346"
-            className={styles.bottom}
+            className={"bottom"}
             variants={{
               closed: { d: "M 2 16.346 L 20 16.346" },
               open: { d: "M 3 2.5 L 17 16.346" },
@@ -78,6 +74,28 @@ const MenuToggle = ({ toggle, isOpen }) => {
           />
         </svg>
       </button>
+      <style jsx>{`
+        .button {
+          border: none;
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          cursor: pointer;
+
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          background: #ffffff00;
+          padding: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .button path {
+          fill: #2f6bf6;
+        }
+      `}</style>
     </>
   );
 };
