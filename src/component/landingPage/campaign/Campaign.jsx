@@ -8,8 +8,7 @@ const Campaign = () => {
         {
           //   backgroundColor: "red",
         }
-      }
-    >
+      }>
       <div className="main">
         <div
           className={styles.post}
@@ -18,8 +17,7 @@ const Campaign = () => {
             width: "100%",
             //   alignItems: "center",
             justifyContent: "center",
-          }}
-        >
+          }}>
           <div className={styles.textContainer}>
             <h1 className={styles.title}>
               Recruitment campaign that matches your brand identity

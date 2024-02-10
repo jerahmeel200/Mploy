@@ -57,11 +57,16 @@ const Stats = () => {
         <div className={styles.wrapper}>
           <div className={styles.one}>
             <h1>{counters.recruitmentProcesses.toLocaleString()}+</h1>
-            <p>Recruitment processes managed</p>
+            <p>
+              Recruitment processes <br />
+              managed
+            </p>
           </div>
           <div className={styles.two}>
             <h1>{counters.activeTeam.toLocaleString()}+</h1>
-            <p>Active recruitment team</p>
+            <p>
+              Active recruitment <br /> team
+            </p>
           </div>
           <div className={styles.three}>
             <h1>{counters.satisfiedUsers.toLocaleString()}+</h1>

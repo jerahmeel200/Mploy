@@ -1,5 +1,5 @@
 .container {
-  padding-top: 50px;
+  padding-top: 80px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -8,11 +8,12 @@
 .wrapper {
   display: flex;
 
-  align-items: center;
-  justify-content: space-between;
+  align-items: flex-start;
+  justify-content: center;
   text-align: center;
 
   padding: 20px;
+  gap: 150px;
 }
 
 /* Stats styles */
@@ -21,130 +22,59 @@
   max-width: 271px;
 }
 
-.two h1 {
+.wrapper h1 {
   color: rgba(11, 26, 62, 1);
   font-weight: 700;
   font-size: 48px;
   font-family: "montserrat", sans-serif;
-  margin-bottom: 10px;
-}
-.one h1 {
-  color: rgba(11, 26, 62, 1);
-  font-weight: 700;
-  font-size: 48px;
-  font-family: "montserrat", sans-serif;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
-.one p {
+.wrapper p {
   color: rgba(79, 79, 79, 1);
   font-weight: 500;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 24px;
   font-family: "montserrat", sans-serif;
-}
-.three h1 {
-  color: rgba(11, 26, 62, 1);
-  font-weight: 700;
-  font-size: 48px;
-  font-family: "montserrat", sans-serif;
-  margin-bottom: 10px;
 }
 
-.three p {
-  color: rgba(79, 79, 79, 1);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.4;
-  font-family: "montserrat", sans-serif;
-}
-.four h1 {
-  color: rgba(11, 26, 62, 1);
-  font-weight: 700;
-  font-size: 48px;
-  font-family: "montserrat", sans-serif;
-  margin-bottom: 10px;
-}
-
-.four p {
-  color: rgba(79, 79, 79, 1);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.4;
-  font-family: "montserrat", sans-serif;
-}
-.two p {
-  color: rgba(79, 79, 79, 1);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.4;
-  font-family: "montserrat", sans-serif;
-}
-.one {
-  max-width: 271;
-}
-.two {
-  max-width: 200;
-}
-.three {
-  max-width: 123;
-}
-.four {
-  max-width: 79;
+@media screen and (max-width: 1400px) {
+  .wrapper {
+    gap: 100px;
+  }
 }
 
 @media screen and (max-width: 1280px) {
-  .stats h1 {
-    font-size: 38px;
+  .wrapper h1 {
+    margin-bottom: 10px;
+    font-size: 36px;
   }
-  .stats p {
-    font-size: 16px;
+
+  .wrapper p {
+    font-size: 14px;
+    line-height: 20px;
   }
 }
 
-@media screen and (max-width: 1024px) {
-  .stats h1 {
-    font-size: 35px;
+@media screen and (max-width: 900px) {
+  .wrapper {
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: space;
   }
-  .stats p {
-    font-size: 12px;
+
+  .wrapper h1 {
+    font-size: 30px;
+  }
+
+  .wrapper p {
+    font-size: 14px;
+    line-height: 20px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .container {
-    display: none;
-  }
-  .stats h1 {
-    font-size: 30px;
-  }
-  .stats p {
-    font-size: 10px;
-  }
-
-  .wrapper {
-    animation: scroll 10s linear infinite;
-    width: 250px;
-    align-items: center;
-    /* gap: 500px; */
-  }
-  .one {
-    max-width: 271;
-  }
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(0);
-    }
-
-    100% {
-      transform: translateX(calc(-250px * 3));
-    }
-  }
 }
 
 @media screen and (max-width: 640px) {
-  .stats h1 {
-    font-size: 29px;
-  }
 }

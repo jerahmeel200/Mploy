@@ -16,8 +16,7 @@ const page = () => {
       <Hero />
       <Stats />
       <Recruite />
-      <Campaign />
-      <Match />
+
       <Steps />
       <Tested />
       <Footer />

@@ -5,13 +5,7 @@ import Button from "@/reuse/Button/Button";
 const Hero = () => {
   return (
     <>
-      <div
-        className={styles.container}
-        style={
-          {
-            //   backgroundColor: "red",
-          }
-        }>
+      <div className={styles.container}>
         <div className={styles.wrapper}>
           <div className={styles.textContainer}>
             <h1 className={styles.title}>

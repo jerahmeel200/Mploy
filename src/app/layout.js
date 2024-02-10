@@ -1,9 +1,7 @@
 "use client";
 
-import Footer from "@/component/footer/Footer";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Navbar from "@/component/navbar/Navbar";
 import { useRouter } from "next/navigation";
 
 const inter = Inter({ subsets: ["latin"] });

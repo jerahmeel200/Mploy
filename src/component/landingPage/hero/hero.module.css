@@ -14,9 +14,9 @@
 }
 
 .title {
-  font-size: 40px;
+  font-size: 45px;
   font-weight: 600;
-  line-height: 48px;
+  line-height: 55px;
   letter-spacing: -2%;
   color: rgba(11, 26, 62, 1);
   font-family: "montserrat", serif;
@@ -58,12 +58,16 @@
 }
 
 .postDesc {
-  font-weight: 500;
   margin-top: 20px;
   font-size: 20px;
   font-family: "Montserrat", sans-serif;
   line-height: 30px;
   color: rgba(79, 79, 79, 1);
+
+  font-family: "montserrat", sans-serif;
+  max-width: 516px;
+  line-height: 32px;
+  font-size: 20px;
 }
 
 .btn button {
@@ -84,64 +88,78 @@
 }
 
 @media screen and (max-width: 1280px) {
-  .title {
-    font-size: 48px;
-  }
-  .imgContainer {
-    display: none;
-  }
-  .textContainer {
-    text-align: center;
-  }
-  .btn {
-    /* background-color: red; */
-    display: flex;
-    justify-content: center;
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .title {
-    font-size: 36px;
-  }
-
-  .post {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .container {
+    padding: 100px 30px;
   }
 
   .textContainer {
-    order: 2;
-    text-align: center;
-    margin-top: 20px;
-    min-width: 100%;
-  }
-
-  .imgContainer {
-    order: 1;
-    text-align: center;
-    min-width: 100%;
+    width: 100%;
+    max-width: 400px;
   }
 
   .image {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 35px;
+    line-height: 43px;
+  }
+
+  .postDesc {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .imgContainer {
+    max-width: 600px;
+    margin-left: -50px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding-bottom: 30px;
+  }
+
+  .wrapper {
+    margin-top: 50px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .textContainer {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imgContainer {
     max-width: 100%;
-    height: auto;
+    margin-left: 0px;
+    margin-top: 50px;
+  }
+
+  .title {
+    font-size: 35px;
+    line-height: 43px;
+  }
+
+  .postDesc {
+    margin-top: 16px;
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
 @media screen and (max-width: 768px) {
-  .title {
-    font-size: 24px;
-  }
 }
 
 @media screen and (max-width: 640px) {
-  .title {
-    font-size: 30px;
-  }
-
-  .textContainer {
-    gap: 5px;
-  }
 }

@@ -1,28 +1,36 @@
 .container {
-  background-size: cover;
-  background-position: center;
-  padding: 50px 20px; /* Adjust padding as needed */
+  padding: 100px 0;
+}
+
+.post {
+  margin-top: 100px;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 100px;
+  padding: 30px 0;
+}
+
+.post_reverse {
+  flex-direction: row-reverse;
 }
 
 .title {
   font-size: 40px;
+  line-height: 54px;
   font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2%;
   color: rgba(11, 26, 62, 1);
   font-family: "montserrat", serif;
 }
-
-.post {
-  margin-top: 30px;
+.postDesc {
+  color: rgba(79, 79, 79, 1);
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "montserrat", serif;
+  line-height: 32px;
   max-width: 100%;
-  display: flex;
-  /* align-items: center; */
-  justify-content: space-between;
-  gap: 200px;
-  padding: 30px 10px;
 }
-
 .imgContainer {
   flex: 1;
 }
@@ -39,70 +47,42 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  min-width: 45%;
 }
 
 .postTitle {
   font-size: 40px;
 }
 
-.postDesc {
-  color: rgba(79, 79, 79, 1);
-  font-size: 18px;
-  font-weight: 500;
-  font-family: "montserrat", serif;
-  line-height: 32px;
-  max-width: 100%;
-}
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 100px 0;
+  }
+  .post {
+    gap: 50px;
+  }
 
-@media screen and (max-width: 1280px) {
   .title {
-    font-size: 48px;
+    font-size: 34px;
+    line-height: 46px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .postDesc {
+    font-size: 20px;
+    line-height: 32px;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .title {
-    font-size: 36px;
-  }
-
   .post {
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    gap: 50px;
   }
 
-  .textContainer {
-    order: 2;
-    /* text-align: center; */
-    margin-top: 20px;
-    min-width: 100%;
-  }
-
-  .imgContainer {
-    order: 1;
+  .title {
     text-align: center;
-    min-width: 100%;
   }
-
-  .image {
-    max-width: 100%;
-    height: auto;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .title {
-    font-size: 24px;
-  }
-}
-
-@media screen and (max-width: 640px) {
-  .title {
-    font-size: 20px;
-  }
-
-  .textContainer {
-    gap: 5px;
+  .postDesc {
+    text-align: center;
   }
 }

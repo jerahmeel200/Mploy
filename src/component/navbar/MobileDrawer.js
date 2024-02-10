@@ -1,14 +1,13 @@
 import { useState, useEffect } from "react";
 import { useAnimate, stagger } from "framer-motion";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const navData = [
   { link: "/", title: "Home" },
-  { link: "/about-us", title: "About Us" },
-  { link: "/license/liquor", title: "Apply For License" },
-  { link: "/our-team", title: "Administrators Office" },
-  { link: "/visit-kma", title: "Visit KMA" },
-  { link: "/contact-us", title: "Contact Us" },
+  { link: "/about", title: "About us" },
+  { link: "/works", title: "How it works" },
+  { link: "/contact", title: "Contact Us" },
 ];
 
 function Menu({ close = () => null }) {
@@ -25,6 +24,8 @@ function Menu({ close = () => null }) {
     <>
       <nav className="menu">
         <ul>
+          <img src="/logo_white_transparent.png" />
+
           {navData.map((x) => {
             return (
               <li key={x?.title} onClick={() => gox(x)}>
@@ -44,8 +45,8 @@ function Menu({ close = () => null }) {
           left: 0;
           bottom: 0;
           width: 100%;
-          max-width: calc(100vw - 100px);
-          background: red;
+          max-width: calc(100vw - 150px);
+          background: #2f6bf6;
           transform: translateX(-100%);
           will-change: transform;
           display: flex;
@@ -76,14 +77,32 @@ function Menu({ close = () => null }) {
           cursor: pointer;
         }
 
+        @media screen and (max-width: 700px) {
+          .menu {
+            max-width: calc(100vw - 150px);
+          }
+
+          .menu li a {
+            font-size: 20px;
+            line-height: 40px;
+          }
+        }
+
         .menu ul,
         .menu li {
           list-style: none;
           margin: 0;
         }
 
+        .menu img {
+          width: 80px;
+          margin-bottom: 20px;
+          position: absolute;
+          top: 30px;
+          left: 30px;
+        }
+
         .button {
-          outline: none;
           border: none;
           -webkit-user-select: none;
           -moz-user-select: none;
@@ -93,7 +112,7 @@ function Menu({ close = () => null }) {
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background: red;
+          background: #ffffff00;
           padding: 10px;
           display: flex;
           align-items: center;
@@ -107,8 +126,8 @@ function Menu({ close = () => null }) {
 const Path = (props) => (
   <path
     fill="transparent"
-    strokeWidth="3"
-    stroke="#fff"
+    strokeWidth="4"
+    stroke="#2f6bf6"
     strokeLinecap="round"
     {...props}
   />
@@ -140,7 +159,6 @@ const MenuToggle = ({ toggle, isOpen }) => {
       </button>
       <style jsx>{`
         .button {
-          outline: none;
           border: none;
           -webkit-user-select: none;
           -moz-user-select: none;
@@ -150,7 +168,7 @@ const MenuToggle = ({ toggle, isOpen }) => {
           width: 40px;
           height: 40px;
           border-radius: 50%;
-          background: red;
+          background: #ffffff00;
           padding: 10px;
           display: flex;
           align-items: center;
@@ -158,7 +176,7 @@ const MenuToggle = ({ toggle, isOpen }) => {
         }
 
         .button path {
-          fill: #fff;
+          fill: #2f6bf6;
         }
       `}</style>
     </>
