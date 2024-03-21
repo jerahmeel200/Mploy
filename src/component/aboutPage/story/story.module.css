@@ -21,13 +21,11 @@
   line-height: 54px;
   font-weight: 600;
   color: rgba(11, 26, 62, 1);
-  font-family: "montserrat", serif;
 }
 .postDesc {
   color: rgba(79, 79, 79, 1);
   font-size: 18px;
   font-weight: 500;
-  font-family: "montserrat", serif;
   line-height: 32px;
   max-width: 100%;
 }

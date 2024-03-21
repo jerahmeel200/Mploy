@@ -16,7 +16,6 @@
   line-height: 48px;
 
   color: rgba(11, 26, 62, 1);
-  font-family: "montserrat", serif;
 }
 
 .post {
@@ -59,7 +58,6 @@
   color: rgba(79, 79, 79, 1);
   font-size: 18px;
   font-weight: 500;
-  font-family: "montserrat", serif;
   font-weight: 500;
   line-height: 32px;
   max-width: 550px;

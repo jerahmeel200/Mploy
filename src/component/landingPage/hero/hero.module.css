@@ -19,7 +19,6 @@
   line-height: 55px;
   letter-spacing: -2%;
   color: rgba(11, 26, 62, 1);
-  font-family: "montserrat", serif;
 }
 
 .wrapper {
@@ -60,11 +59,10 @@
 .postDesc {
   margin-top: 20px;
   font-size: 20px;
-  font-family: "Montserrat", sans-serif;
+
   line-height: 30px;
   color: rgba(79, 79, 79, 1);
 
-  font-family: "montserrat", sans-serif;
   max-width: 516px;
   line-height: 32px;
   font-size: 20px;

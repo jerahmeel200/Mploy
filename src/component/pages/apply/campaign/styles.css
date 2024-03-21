@@ -1,0 +1,31 @@
+body {
+   background-color: #f3f3f3;
+   overflow-x: hidden;
+}
+
+.description_html_content h2 {
+   font-size: 18px;
+   line-height: 24px;
+   font-weight: 500;
+   color: #333333;
+}
+
+.description_html_content p,
+.description_html_content li {
+   @apply text-[#333333] leading-[1.5] mt-[10px];
+   font-weight: 400;
+   font-size: clamp(16px, calc(18 / 1440 * 100vw), 20px);
+   line-height: 2;
+}
+
+.description_html_content ul {
+   list-style: circle;
+   padding-left: 30px;
+   padding-bottom: 10px;
+}
+
+.description_html_content ol {
+   list-style: decimal;
+   padding-left: 30px;
+   padding-bottom: 10px;
+}
