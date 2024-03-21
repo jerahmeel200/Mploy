@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { useFetchSingleLiveRecruitment } from "@/hooks/api/recruitment";
-import { filterRecruitmentBasicInfo } from "@/hooks/api/helpers";
+import { filterRecruitmentBasicInfo } from "@/hooks/api/recruitment/helpers";
 import Button from "@/reuse/Button/Button";
 import { motion } from "framer-motion";
 

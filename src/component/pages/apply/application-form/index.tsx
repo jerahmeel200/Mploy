@@ -1,7 +1,10 @@
 "use client";
 import React, { Fragment, useEffect } from "react";
-import { useFetchSingleLiveRecruitment } from "@/hooks/api/recruitment";
-import { filterRecruitmentBasicInfo } from "@/hooks/api/helpers";
+import {
+  useFetchSingleLiveRecruitment,
+  useCandidateSubmitResponse,
+} from "@/hooks/api/recruitment";
+import { filterRecruitmentBasicInfo } from "@/hooks/api/recruitment/helpers";
 import Button from "@/reuse/Button/Button";
 import { motion } from "framer-motion";
 
@@ -13,6 +16,10 @@ import "./styles.css";
 import { IBlock, IBlockOption } from "@/data/applicationFormBuilder";
 import { Radio, Spin, Space, Popover, Tooltip, Checkbox } from "antd";
 import TextField from "@/component/reuseables/TextField/TextField";
+
+import { useFileUpload } from "@/hooks/api/upload/useUploadFIle";
+import { showErrorToast } from "@/utils/toaster";
+import { isValidEmail } from "@/utils/validateEmail";
 
 const emptyMsg = (
   <div
@@ -56,19 +63,161 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
   const errorMsg = error?.response?.data?.message || "An error occured";
 
   const [responses, setresponses] = React.useState({});
-  console.log({ responses, application_form_blocks });
+  const [upolad_names, setupolad_names] = React.useState({});
 
-  const onSUbmit = () => {
-    const reqBody = {
-      first_name: responses["first_name"],
-      last_name: responses["last_name"],
-      email: responses["email"],
-      phone: responses["phone"],
+  const { loading: uploading, handleImageUpload } = useFileUpload();
 
-      responses: {},
-    };
+  const uploadFileToAWS = async ({
+    event,
+    optionId,
+  }: {
+    event: React.ChangeEvent<HTMLInputElement>;
+    optionId?: string;
+  }) => {
+    const files = event.target.files;
+
+    try {
+      if (files && files?.length > 0) {
+        const _selectedFile = files[0];
+        const fileSizeInMB = _selectedFile.size / (1024 * 1024);
+        if (fileSizeInMB > 5) {
+          alert("File size should be 5MB or less.");
+        }
+
+        const formData: any = new FormData();
+        formData.append("file", _selectedFile);
+        const req = await handleImageUpload(formData);
+
+        if (req?.status === 200 && req?.error === false) {
+          const returnedUri = req?.data?.data?.Location;
+
+          setupolad_names((old) => ({
+            ...old,
+            [optionId]: _selectedFile?.name,
+          }));
+
+          setresponses((old) => ({
+            ...old,
+            [optionId]: {
+              value: returnedUri,
+            },
+          }));
+        } else {
+        }
+      }
+    } catch (error) {
+    } finally {
+    }
   };
 
+  const { submitResponse, loading: updating } = useCandidateSubmitResponse();
+
+  const [success, setSuccess] = React.useState(false);
+  const onSubmit = () => {
+    const idsOfAllRequiredFields = [];
+
+    let first_name_id = "";
+    let last_name_id = "";
+    let email_id = "";
+    let phone_id = "";
+
+    if (application_form_blocks?.length) {
+      application_form_blocks.map((block) => {
+        if (block?.options?.length) {
+          block.options.map((option?: IBlockOption) => {
+            if (option.required) {
+              idsOfAllRequiredFields.unshift(option.optionId);
+            }
+
+            if (option?.dbKey === "first_name")
+              first_name_id = option?.optionId;
+            if (option?.dbKey === "last_name") last_name_id = option?.optionId;
+            if (option?.dbKey === "email") email_id = option?.optionId;
+            if (option?.dbKey === "phone") phone_id = option?.optionId;
+          });
+        }
+      });
+    }
+
+    if (idsOfAllRequiredFields?.length) {
+      const idsOfAllRequiredFieldsThatHaveNotBeenFilled: any = [];
+      idsOfAllRequiredFields.map((id?: string) => {
+        if (
+          responses[id]?.value?.trim()?.length ||
+          responses[id]?.values?.length
+        ) {
+        } else {
+          idsOfAllRequiredFieldsThatHaveNotBeenFilled.unshift(id);
+        }
+      });
+
+      const targetElementId = idsOfAllRequiredFieldsThatHaveNotBeenFilled[0];
+      if (targetElementId) {
+        showErrorToast({
+          message: "All required fields must be filled in!",
+          position: "top-center",
+        });
+
+        const targetElement = document.getElementById(targetElementId);
+        targetElement.scrollIntoView({ behavior: "smooth", block: "end" });
+
+        return;
+      }
+    }
+
+    if (!isValidEmail(responses[email_id]?.value?.trim())) {
+      const targetElement = document.getElementById(email_id);
+      targetElement.scrollIntoView({ behavior: "smooth", block: "end" });
+      return showErrorToast({
+        message: "Invalid email. Please double-check and try again.",
+        position: "top-center",
+      });
+    }
+
+    const reqBody = {
+      recruitment_id: data?.id,
+      first_name: responses[first_name_id]?.value,
+      last_name: responses[last_name_id]?.value,
+      email: responses[email_id]?.value,
+      phone: responses[phone_id]?.value,
+
+      responses,
+    };
+
+    submitResponse({
+      campaign_live_id: campaign_id,
+      data: reqBody,
+      cb: (result?: any) => {
+        setSuccess(true);
+      },
+    });
+  };
+
+  const globalLoading = uploading || updating;
+  const disabled = globalLoading;
+
+  if (success)
+    return (
+      <div className="h-screen w-full flex-col gap-[32px] flex items-center justify-center">
+        <img
+          src="/logo_blue_transparent.png"
+          className="w-[50px] mb-[20px] absolute top-[20px] left-[20px]"
+        />
+
+        <img src="/complete_task.svg" className="w-full max-w-[400px]" />
+
+        <div>
+          <h1 className="text-[#013575] text-[40px] font-medium max-w-[800px] text-center">
+            Application Success!
+          </h1>
+          <h2 className="text-gray-600 text-[18px] max-w-[700px] text-center mt-[10px]">
+            Your job application for the position of {job_title} has been
+            successfully submitted! In the meantime, you can expect a
+            confirmation email with more details about the application process.
+          </h2>
+        </div>
+      </div>
+    );
   return (
     <>
       <motion.div
@@ -161,6 +310,7 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
                             <div
                               className="mb-[20px] flex flex-row "
                               key={option?.optionId}
+                              id={option?.optionId}
                               style={{
                                 flexBasis: option?.fullWidth
                                   ? "100%"
@@ -273,8 +423,18 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
                               {option.optionType === "multiple_choice" ? (
                                 <div className="mb-[20px]">
                                   {option?.label?.length ? (
-                                    <p className="text-[clamp(14px,calc(16/1440*100vw),16px)] text-[#1D1D1D] ">
+                                    <p className="text-[clamp(14px,calc(16/1440*100vw),16px)] text-[#1D1D1D] font-medium ">
                                       {option.label}
+                                      {!option?.required ? null : (
+                                        <span
+                                          style={{
+                                            color: "#EB5757",
+                                            fontSize: 18,
+                                          }}>
+                                          {" "}
+                                          *
+                                        </span>
+                                      )}
                                     </p>
                                   ) : null}
 
@@ -284,9 +444,9 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
 
                                   {option?.subOptions.map((subOption) => {
                                     const checked =
-                                      responses[option?.optionId]?.value
+                                      responses[option?.optionId]?.values
                                         ?.length &&
-                                      responses[option?.optionId]?.value?.some(
+                                      responses[option?.optionId]?.values?.some(
                                         (item) =>
                                           item === subOption?.subOptionId
                                       )
@@ -295,9 +455,10 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
 
                                     const itemsThatHaveBeenChecked =
                                       typeof responses[option?.optionId]
-                                        ?.value === "object" &&
-                                      responses[option?.optionId]?.value?.length
-                                        ? responses[option?.optionId]?.value
+                                        ?.values === "object" &&
+                                      responses[option?.optionId]?.values
+                                        ?.length
+                                        ? responses[option?.optionId]?.values
                                         : [];
 
                                     return (
@@ -315,7 +476,7 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
                                               return {
                                                 ...old,
                                                 [option?.optionId]: {
-                                                  value:
+                                                  values:
                                                     itemsThatHaveBeenChecked?.length
                                                       ? checked
                                                         ? itemsThatHaveBeenChecked.filter(
@@ -344,29 +505,75 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
 
                               {option.optionType === "file_upload" ? (
                                 <div className="w-full mb-[20px]">
-                                  <label>{option?.label}</label>
+                                  {option?.label?.length ? (
+                                    <p className="text-[clamp(14px,calc(16/1440*100vw),16px)] text-[#1D1D1D] font-medium ">
+                                      {option.label}
+                                      {!option?.required ? null : (
+                                        <span
+                                          style={{
+                                            color: "#EB5757",
+                                            fontSize: 18,
+                                          }}>
+                                          {" "}
+                                          *
+                                        </span>
+                                      )}
+                                    </p>
+                                  ) : null}
                                   <div
                                     className="w-full mt-[10px]
-                                                          h-[150px]
+                                                          h-[150px] flex-col
                                                              mx-auto  bg-gray-200 gap-[10px] flex items-center justify-center">
-                                    <img
-                                      src="/add-circle-blue.png"
-                                      className="w-[20px]"
-                                    />
-                                    <label
-                                      htmlFor="display_picture_div"
-                                      className="cursor-pointer">
-                                      <span className="text-primary">
-                                        Click to upload
-                                      </span>
-                                    </label>
+                                    {!responses[option?.optionId] ? null : (
+                                      <div>
+                                        <label>
+                                          {upolad_names[option?.optionId]}
+                                        </label>
+                                      </div>
+                                    )}
 
-                                    <input
-                                      type="file"
-                                      className=" hidden"
-                                      id="display_picture_div"
-                                      accept="pdf/*"
-                                    />
+                                    {!uploading ? (
+                                      <>
+                                        <div className=" gap-[10px] flex items-center justify-center">
+                                          <img
+                                            src="/add-circle-blue.png"
+                                            className="w-[20px]"
+                                          />
+                                          <label
+                                            htmlFor="display_picture_div"
+                                            className="cursor-pointer">
+                                            <span className="text-primary">
+                                              {responses[option?.optionId]
+                                                ? "Change upload"
+                                                : "Click to upload"}
+                                            </span>
+                                          </label>
+
+                                          <input
+                                            type="file"
+                                            className=" hidden"
+                                            id="display_picture_div"
+                                            accept="pdf/*"
+                                            onChange={(e: any) => {
+                                              uploadFileToAWS({
+                                                event: e,
+                                                optionId: option?.optionId,
+                                              });
+                                              e.target.value = null;
+                                            }}
+                                          />
+                                        </div>
+                                      </>
+                                    ) : (
+                                      <Spin
+                                        indicator={
+                                          <LoadingOutlined
+                                            style={{ fontSize: 24 }}
+                                            spin
+                                          />
+                                        }
+                                      />
+                                    )}
                                   </div>
                                 </div>
                               ) : null}
@@ -380,7 +587,13 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
           ) : (
             emptyMsg
           )}
-          <Button title="Submit Application" width="100%" disabled />
+          <Button
+            title="Submit Application"
+            width="100%"
+            disabled={disabled}
+            loading={globalLoading}
+            onClick={onSubmit}
+          />
         </div>
       </motion.main>
     </>

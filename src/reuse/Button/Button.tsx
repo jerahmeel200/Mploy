@@ -1,5 +1,7 @@
 import React from "react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { Spin } from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
 
 function Button({
   width = "183px",
@@ -13,6 +15,9 @@ function Button({
   mb = "0px",
   ml = "0px",
   mr = "0px",
+  onClick,
+  disabled = false,
+  loading = false,
 }: {
   width?: string;
   height?: string;
@@ -24,11 +29,27 @@ function Button({
   mb?: string;
   ml?: string;
   mr?: string;
+  onClick?: any;
+  disabled?: boolean;
+  loading?: boolean;
 }) {
+  const router = useRouter();
+
+  const handleClickButton = () => {
+    if (onClick && typeof onClick === "function") {
+      onClick();
+    } else {
+      if (typeof href == "string" && href?.length) {
+        router.push(href);
+      }
+    }
+  };
+
   return (
     <>
-      <a
-        href={href}
+      <button
+        onClick={handleClickButton}
+        disabled={loading || disabled}
         className="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500  hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300"
         //
         style={{
@@ -42,9 +63,19 @@ function Button({
           marginTop: mt,
           marginBottom: mb,
         }}>
-        <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
-        <span className="relative">{title}</span>
-      </a>
+        {loading ? (
+          <Spin
+            indicator={
+              <LoadingOutlined style={{ fontSize: 20, color: "#fff" }} spin />
+            }
+          />
+        ) : (
+          <>
+            <span className="absolute right-0 w-8 h-32 -mt-12 transition-all duration-1000 transform translate-x-12 bg-white opacity-10 rotate-12 group-hover:-translate-x-40 ease"></span>
+            <span className="relative">{title}</span>
+          </>
+        )}
+      </button>
 
       <style jsx>{`
         *,
@@ -2093,6 +2124,11 @@ function Button({
           .lg\:flex {
             display: flex;
           }
+        }
+
+        button:disabled {
+          cursor: not-allowed;
+          opacity: 0.7;
         }
       `}</style>
     </>
