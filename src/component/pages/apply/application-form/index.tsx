@@ -20,7 +20,7 @@ import TextField from "@/component/reuseables/TextField/TextField";
 import { useFileUpload } from "@/hooks/api/upload/useUploadFIle";
 import { showErrorToast } from "@/utils/toaster";
 import { isValidEmail } from "@/utils/validateEmail";
-
+import AlertModal from "@/component/reuseables/AlertModal";
 const emptyMsg = (
   <div
     className="w-full 
@@ -113,6 +113,8 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
   const { submitResponse, loading: updating } = useCandidateSubmitResponse();
 
   const [success, setSuccess] = React.useState(false);
+  const [showmodal, setshowmodal] = React.useState("");
+
   const onSubmit = () => {
     const idsOfAllRequiredFields = [];
 
@@ -190,6 +192,10 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
       cb: (result?: any) => {
         setSuccess(true);
       },
+      onError: (errorMsg?: string, showModal?: any) => {
+        console.log({ errorMsg, showModal });
+        if (showModal) setshowmodal(errorMsg);
+      },
     });
   };
 
@@ -220,6 +226,11 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
     );
   return (
     <>
+      <AlertModal
+        open={showmodal ? true : false}
+        message={showmodal}
+        handleClose={() => setshowmodal(false)}
+      />
       <motion.div
         initial={{}}
         variants={{
@@ -236,9 +247,11 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
               {errorMsg}
             </h1>
 
-            <Link href="/" className="text-primary cursor-pointer">
-              <button>Go to homepage</button>
-            </Link>
+            <button
+              className="text-primary cursor-pointer"
+              onClick={() => window.history.back()}>
+              Go back
+            </button>
           </div>
         ) : (
           <>
@@ -349,14 +362,16 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
                                     }>
                                     {option?.subOptions.map((subOption) => {
                                       return (
-                                        <div
+                                        <label
+                                          htmlFor={subOption?.subOptionId}
                                           key={subOption?.subOptionId}
                                           className={
                                             option?.optionType === "yes_no"
-                                              ? "mt-[15px] flex gap-[5px] items-center rounded-[4px] border border-[#E0E0E0] w-[170px] h-[48px] px-[20px]"
-                                              : " mt-[15px] flex gap-[5px] items-center "
+                                              ? " cursor-pointer mt-[15px] flex gap-[5px] items-center rounded-[4px] border border-[#E0E0E0] w-[170px] h-[48px] px-[20px]"
+                                              : "cursor-pointer  mt-[15px] flex gap-[5px] items-center "
                                           }>
                                           <Radio
+                                            id={subOption?.subOptionId}
                                             style={{ fontSize: 12 }}
                                             checked={
                                               responses[option?.optionId]
@@ -372,8 +387,8 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
                                               }));
                                             }}
                                           />
-                                          <label>{subOption?.label}</label>
-                                        </div>
+                                          <span>{subOption?.label}</span>
+                                        </label>
                                       );
                                     })}
                                   </div>

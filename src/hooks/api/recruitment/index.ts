@@ -44,10 +44,12 @@ export const useCandidateSubmitResponse = () => {
     campaign_live_id,
     data,
     cb,
+    onError,
   }: {
     campaign_live_id: any;
     data?: any;
     cb?: any;
+    onError?: any;
   }) => {
     setLoading(true);
     let success = false;
@@ -60,9 +62,18 @@ export const useCandidateSubmitResponse = () => {
       if (typeof cb === "function") cb(res?.data);
       setLoading(false);
     } catch (error: Error | any) {
-      showErrorToast({
-        message: error?.response?.data?.message || "An error occured!",
-      });
+      if (typeof onError === "function")
+        onError(
+          error?.response?.data?.message,
+          error?.response?.data?.showModal
+        );
+
+      if (!error?.response?.data?.showModal) {
+        showErrorToast({
+          message: error?.response?.data?.message || "An error occured!",
+        });
+      }
+
       success = false;
       setLoading(false);
     } finally {

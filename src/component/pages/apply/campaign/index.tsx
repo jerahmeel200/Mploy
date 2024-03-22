@@ -32,17 +32,16 @@ function RecruitmentApplyCampaignMain({ campaign_id }) {
   const errorMsg = error?.response?.data?.message || "An error occured";
 
   return (
-    <div className="bg-[#f3f3f3] pb-[100px]">
+    <div>
       <motion.div
         initial={{}}
         variants={{
           hide: {
             left: "-140%",
-            // display: 'none',
           },
         }}
         animate={!globalLoad ? "hide" : undefined}
-        className="w-screen h-screen fixed pointer-events-none  top-0 left-0 flex flex-col items-center justify-center">
+        className="w-screen h-screen fixed bg-white   top-0 left-0 flex flex-col items-center justify-center z-10">
         {error ? (
           <div className="flex flex-col items-center justify-center gap-[32px]">
             <img src="/towing.svg" className="w-[400px]" />
@@ -50,9 +49,11 @@ function RecruitmentApplyCampaignMain({ campaign_id }) {
               {errorMsg}
             </h1>
 
-            <Link href="/" className="text-primary cursor-pointer">
-              <button>Go to homepage</button>
-            </Link>
+            <a
+              className="text-primary cursor-pointer"
+              onClick={() => window.history.back()}>
+              Go backdd
+            </a>
           </div>
         ) : (
           <>
