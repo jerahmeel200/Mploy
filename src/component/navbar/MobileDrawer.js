@@ -5,9 +5,9 @@ import styles from "./MobileDrawer.module.css";
 
 const navData = [
   { link: "/", title: "Home" },
-  { link: "/about", title: "About us" },
-  { link: "/works", title: "How it works" },
-  { link: "/contact", title: "Contact Us" },
+  { link: "/about-us", title: "About us" },
+  { link: "/how-it-works", title: "How it works" },
+  { link: "/contact-us", title: "Contact Us" },
   {
     link: "https://mploy-dashboard.vercel.app/auth/login",
     title: "Login",

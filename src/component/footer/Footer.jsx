@@ -21,7 +21,7 @@ const Footer = () => {
               recruiters, to source and hire candidates faster.
             </p>
 
-            <Button title="Contact us" href="/contact" mt="3vh" />
+            <Button title="Contact us" href="/contact-us" mt="3vh" />
           </div>
           <div className={styles.links}>
             <div className={styles.list}>

@@ -32,7 +32,7 @@ const Hamburger = () => {
         <Link href="/how-it-works" className={styles.link}>
           how it works
         </Link>
-        <Link href="/contact" className={styles.link}>
+        <Link href="/contact-us" className={styles.link}>
           Contact us
         </Link>
       </div> */}
