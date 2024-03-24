@@ -43,7 +43,13 @@ const Tested = () => {
       <div className={styles.main}>
         <h1 className={styles.title}>Tested and trusted </h1>
         <br />
-        <div className={styles.container}>
+        <p className="max-w-[700px] mx-auto text-center text-[20px]">
+          With a proven track record of successful hires, we ensure a seamless
+          hiring process that instills confidence in both candidates and
+          employers. Count on us to deliver results-driven solutions that align
+          seamlessly with your hiring needs.
+        </p>
+        {/* <div className={styles.container}>
           {items.map((item, index) => (
             <div className={styles.items} key={index}>
               <div className={styles.top}>
@@ -58,7 +64,7 @@ const Tested = () => {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
     </section>
   );

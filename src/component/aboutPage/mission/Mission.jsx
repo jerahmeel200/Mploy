@@ -8,8 +8,7 @@ const Mission = () => {
         {
           //   backgroundColor: "red",
         }
-      }
-    >
+      }>
       {/* <div className="main"> */}
 
       <div
@@ -19,21 +18,16 @@ const Mission = () => {
           width: "100%",
           //   alignItems: "center",
           justifyContent: "center",
-        }}
-      >
+        }}>
         <div className={styles.textContainer}>
-          <h1 className={styles.title}>Our mission</h1>
+          <h1 className={styles.title}>Our Mission</h1>
           <p className={styles.postDesc}>
-            Lorem ipsum dolor sit amet consectetur. Arcu pharetra morbi euismod
-            ipsum elementum justo arcu egestas etiam. Amet amet est arcu nmauris
-            est. Amet amet tortor tincidunt eget tincidunt gravida quam ac .
-            Varius condimentum vivamus consequat ac aenean netus facilisis
-            cursus ante. Varius condimentum vivamus consequat ac aenean netus
-            facilisis cursus ante.
+            Our mission is to help organisations find the best people to secure
+            its best performance and growth.
           </p>
         </div>
         <div className={styles.imgContainer}>
-          <img src="/mission.png" alt="" className={styles.image} />
+          <img src="/mission_new.jpg" alt="" className={styles.image} />
         </div>
       </div>
     </div>

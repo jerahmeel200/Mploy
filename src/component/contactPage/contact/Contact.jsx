@@ -10,10 +10,9 @@ const Contact = () => {
         <div className={styles.textContainer}>
           <h1 className={styles.title}>Tell us how we can work together</h1>
           <p className={styles.desc}>
-            Lorem ipsum dolor sit amet consectetur. pharetra morbi euismod ipsum
-            elementum justoarcu egestas etiam. Amet amet est arcu nmauris est.
-            Amet amet tortor tincidunt eget tincidunt gravida nmauris est. Amet
-            amet tortor tincidunt eget tincidunt gravida quam ac .
+            Share your goals and challenges with us, and together, we'll tailor
+            a bespoke solution leveraging our expertise and resources to drive
+            your hiring initiatives forward.
           </p>
           <div className={styles.info}>
             <p>

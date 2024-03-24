@@ -14,11 +14,9 @@ const Steps = () => {
             </Slide>
             <Slide direction={"left"} duration={2000} triggerOnce={true}>
               <p className={styles.postDesc}>
-                Lorem ipsum dolor sit amet consectetur. Arcu pharetra morbi
-                euismod ipsum elementum justo arcu egestas etiam. Amet amet est
-                arcu nmauris est. Amet amet tortor tincidunt eget tincidunt
-                gravida quam ac . Varius condimentum vivamus consequat ac aenean
-                netus facilisis cursus attr
+                Our streamlined process simplifies recruitment: launch targeted
+                campaigns, efficiently manage candidates, and seamlessly employ
+                the best fit for your team, all in just three steps
               </p>
             </Slide>
             <Slide direction={"left"} duration={2000} triggerOnce={true}>

@@ -18,14 +18,23 @@
   color: rgba(11, 26, 62, 1);
   font-size: 40px;
   font-weight: 600;
-  font-family: "montserrat", sans-serif;
+
+  font-size: 40px;
+  line-height: 54px;
+  font-weight: 600;
+  color: rgba(11, 26, 62, 1);
 }
 
 .desc {
-  font-family: "montserrat", sans-serif;
   max-width: 516px;
   line-height: 32px;
   font-size: 20px;
+
+  color: rgba(79, 79, 79, 1);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 32px;
+  margin-bottom: 50px;
 }
 
 .textContainer {

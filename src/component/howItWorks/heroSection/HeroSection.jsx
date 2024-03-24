@@ -15,11 +15,9 @@ const HeroSection = () => {
               </Slide>
               <Slide direction={"left"} duration={2000} triggerOnce={true}>
                 <p className={styles.desc}>
-                  Lorem ipsum dolor sit amet consectetur. pharetra morbi euismod
-                  ipsum elementum justoarcu egestas etiam. Amet amet est arcu
-                  nmauris est. Amet amet tortor tincidunt eget tincidunt gravida
-                  nmauris est. Amet amet tortor tincidunt eget tincidunt gravida
-                  quam ac .
+                  Recruiting is as simple as 1-2-3. Sign up, post your job
+                  listings, and connect with top talent effortlessly, all in
+                  just three easy steps.
                 </p>
               </Slide>
             </div>

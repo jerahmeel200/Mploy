@@ -10,19 +10,19 @@ const EasySteps = () => {
       id: 1,
       step: "1",
       title: "Run campaign",
-      desc: "Lorem ipsum dolor sit amet consectetur. Arcu pharetra morbi euismod ipsum elementum justo arcu egestas  Amet amet est arcu nmauris est. Amet amet  tortor tincidunt eget tincidunt gravida quam ac .     Varius ",
+      desc: "Mploy enables you to efficiently run campaigns with ease, streamlining your outreach efforts and maximizing candidate engagement seamlessly. We will find the candidates where they are. ",
     },
     {
       id: 2,
       step: "2",
       title: "Manage candidates",
-      desc: "Lorem ipsum dolor sit amet consectetur. Arcu pharetra morbi euismod ipsum elementum justo arcu egestas  Amet amet est arcu nmauris est. Amet amet  tortor tincidunt eget tincidunt gravida quam ac .     Varius ",
+      desc: "We simplify candidate management into one streamlined step, which offers a centralized platform to efficiently track, evaluate, and communicate with potential hires.",
     },
     {
       id: 3,
       step: "3",
       title: "e-Mploy",
-      desc: "Lorem ipsum dolor sit amet consectetur. Arcu pharetra morbi euismod ipsum elementum justo arcu egestas  Amet amet est arcu nmauris est. Amet amet  tortor tincidunt eget tincidunt gravida quam ac .     Varius ",
+      desc: " e-Mploy streamlines your entire hiring process into a single, efficient step, from sourcing candidates to managing applications, ensuring seamless operations and optimal results",
     },
   ];
 
@@ -30,7 +30,7 @@ const EasySteps = () => {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.imgContainer}>
-          <img src="/girl.png" alt="" />
+          <img src="/girl_3.png" alt="" />
         </div>
 
         <div className={styles.textContainer}>

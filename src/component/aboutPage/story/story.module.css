@@ -31,13 +31,11 @@
 }
 .imgContainer {
   flex: 1;
+  @apply rounded-[50%] w-full aspect-square  overflow-hidden;
 }
 
 .image {
-  object-fit: cover;
-  width: 100%;
-  max-width: 100%;
-  height: auto;
+  @apply w-full h-full object-cover;
 }
 
 .textContainer {

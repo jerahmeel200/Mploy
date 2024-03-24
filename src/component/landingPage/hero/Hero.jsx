@@ -18,8 +18,8 @@ const Hero = () => {
             </Slide>
             <Slide direction={"left"} duration={2000} triggerOnce={true}>
               <p className={styles.postDesc}>
-                Talent Acquisition System built for hiring managers and
-                recruiters, to source and hire candidates faster.
+                MPLOY provides you more ways to find ideal candidates. Our AI
+                powered solution is built to solve modern day recruitment needs.
               </p>
             </Slide>
             {/* <div className={styles.btn}>

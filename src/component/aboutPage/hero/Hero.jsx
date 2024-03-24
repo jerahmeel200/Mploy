@@ -30,11 +30,11 @@ const Hero = () => {
               }}>
               <Slide direction={"left"} duration={2000} triggerOnce={true}>
                 <p className={styles.postDesc}>
-                  Lorem ipsum dolor sit amet consectetur. pharetra morbi euismod
-                  ipsum elementum justoarcu egestas etiam. Amet amet est arcu
-                  nmauris est. Amet amet tortor tincidunt eget tincidunt gravida
-                  nmauris est. Amet amet tortor tincidunt eget tincidunt gravida
-                  quam ac.
+                  We at mploy want to help your company attract the best
+                  candidates for your hiring needs. Your candidates will have an
+                  easy way to apply to the open positions and your team will be
+                  able to follow-up the recruitment status and contact the
+                  successful candidates through our top easy to use application.
                 </p>
               </Slide>
             </div>

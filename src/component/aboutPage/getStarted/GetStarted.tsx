@@ -5,11 +5,12 @@ import Button from "@/reuse/Button/Button";
 const GetStarted = () => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Get started with mploy today</h1>
+      <h1 className={styles.title}>Get started with MPLOY today</h1>
       <p className={styles.desc}>
-        Lorem ipsum dolor sit amet consectetur. Arcu pharetra morbi euismod
-        ipsum elementum justo arcu egestas etiam. Amet amet est arcu nmauris
-        est. Amet amet tortor
+        Embark on your recruitment journey with confidence by getting started
+        with mploy today. Our platform offers the tools and resources you need
+        to streamline your hiring process and find the perfect candidates for
+        your team.
       </p>
       <Button
         title="Get started"

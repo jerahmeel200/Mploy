@@ -22,12 +22,9 @@ const Recruite = () => {
             </Slide>
             <Slide direction={"right"} duration={2000} triggerOnce={true}>
               <p className={styles.postDesc}>
-                Lorem ipsum dolor sit amet consectetur. Arcu pharetra morbi
-                euismod ipsum elementum justo arcu egestas etiam. Amet amet est
-                arcu nmauris est. Amet amet tortor tincidunt eget tincidunt
-                gravida quam ac . Varius condimentum vivamus consequat ac aenean
-                netus facilisis cursus ante. Varius condimentum vivamus
-                consequat ac aenean netus facilisis cursus ante.
+                Our user-friendly recruitment software is designed to simplify
+                the hiring process, streamline and collaborate with hiring teams
+                to attract top talent effortlessly.
               </p>
             </Slide>
           </div>
@@ -42,17 +39,15 @@ const Recruite = () => {
           <div className={styles.textContainer}>
             <Slide direction={"left"} duration={2000} triggerOnce={true}>
               <h1 className={styles.title}>
-                Recruitment campaign that matches your brand identity
+                Recruitment campaign that matches your brand identity.
               </h1>
             </Slide>
             <Slide direction={"left"} duration={2000} triggerOnce={true}>
               <p className={styles.postDesc}>
-                Lorem ipsum dolor sit amet consectetur. Arcu pharetra morbi
-                euismod ipsum elementum justo arcu egestas etiam. Amet amet est
-                arcu nmauris est. Amet amet tortor tincidunt eget tincidunt
-                gravida quam ac . Varius condimentum vivamus consequat ac aenean
-                netus facilisis cursus ante. Varius condimentum vivamus
-                consequat ac aenean netus facilisis cursus ante.
+                Find the best candidates using our tailored made recuiting
+                campaigns that match your brand identity. We provide custom made
+                dashboards and processes to help target, attract and recruit
+                your perfect candidates and meet your hiring goals.
               </p>
             </Slide>
           </div>
@@ -72,12 +67,10 @@ const Recruite = () => {
             </Slide>
             <Slide direction={"right"} duration={2000} triggerOnce={true}>
               <p className={styles.postDesc}>
-                Lorem ipsum dolor sit amet consectetur. Arcu pharetra morbi
-                euismod ipsum elementum justo arcu egestas etiam. Amet amet est
-                arcu nmauris est. Amet amet tortor tincidunt eget tincidunt
-                gravida quam ac . Varius condimentum vivamus consequat ac aenean
-                netus facilisis cursus ante. Varius condimentum vivamus
-                consequat ac aenean netus facilisis cursus ante.
+                We empower businesses to find the perfect talent fit, driving
+                long-term success and growth. Trust us to be your partner in
+                finding the perfect match, we will provide you with a list of
+                candidates that meet your job requirements.
               </p>
             </Slide>
           </div>
