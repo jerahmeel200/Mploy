@@ -29,7 +29,7 @@ const Steps = () => {
           </div>
           <div className={styles.stepsContainer}>
             <Fade duration={2000} triggerOnce={true}>
-              <img className={styles.image} src="/steps.png" alt="" />
+              <img className={styles.image} src="/home_group.png" alt="" />
             </Fade>
           </div>
         </div>
