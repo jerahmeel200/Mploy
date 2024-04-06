@@ -568,7 +568,7 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
                                             type="file"
                                             className=" hidden"
                                             id="display_picture_div"
-                                            accept="pdf/*"
+                                            accept="image/jpeg, image/jpg, image/png, .pdf, .docx"
                                             onChange={(e: any) => {
                                               uploadFileToAWS({
                                                 event: e,
