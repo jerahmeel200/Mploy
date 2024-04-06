@@ -17,7 +17,7 @@ const Hero = () => {
               </h1>
             </Slide>
             <Slide direction={"left"} duration={2000} triggerOnce={true}>
-              <p className={styles.postDesc}>
+              <p className={styles.postDescx}>
                 MPLOY provides you more ways to find ideal candidates. Our AI
                 powered solution is built to solve modern day recruitment needs.
               </p>
@@ -36,7 +36,7 @@ const Hero = () => {
           </div>
           <div className={styles.imgContainer}>
             <Fade duration={2000} triggerOnce={true}>
-              <img src="/hero.png" alt="" className={styles.image} />
+              <img src="/hero.webp" alt="" className={styles.image} />
             </Fade>
           </div>
         </div>

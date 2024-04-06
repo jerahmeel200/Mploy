@@ -4,6 +4,7 @@ import styles from "./footer.module.css";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/reuse/Button/Button";
+
 const Footer = () => {
   return (
     <footer className={styles.footer}>
@@ -25,9 +26,15 @@ const Footer = () => {
           </div>
           <div className={styles.links}>
             <div className={styles.list}>
-              <Link href="/">About Us</Link>
-              <Link href="/">How it works</Link>
-              <Link href="/">Privacy policy</Link>
+              <Link href="/" className="hover:underline">
+                About Us
+              </Link>
+              <Link href="/" className="hover:underline">
+                How it works
+              </Link>
+              <Link href="/" className="hover:underline">
+                Privacy policy
+              </Link>
 
               <div
                 style={{
@@ -41,7 +48,7 @@ const Footer = () => {
                     fontWeight: "500",
                     fontSize: "14px",
                     lineHeight: "28px",
-                    fontFamily: "montserrat, serif",
+                    fontFamily: "Montserrat, serif",
                   }}>
                   &copy; 2023 Mploy. All rights reserved.
                 </p>

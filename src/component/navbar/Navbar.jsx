@@ -37,11 +37,9 @@ const Navbar = () => {
 
       <div className={styles.container}>
         <div className={styles.wrapper}>
-          <div className={styles.logo}>
-            <Link href={"/"}>
-              <img src="/logo_blue_transparent.png" />
-            </Link>
-          </div>
+          <Link href={"/"}>
+            <img src="/logo_blue_transparent_new.webp" className="w-[180px]" />
+          </Link>
           <div className={styles.links}>
             {navLinks.map((item) => (
               <Link href={item.link} key={item.id}>

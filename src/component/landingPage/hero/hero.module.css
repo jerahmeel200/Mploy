@@ -15,7 +15,7 @@
 
 .title {
   font-size: 45px;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 55px;
   letter-spacing: -2%;
   color: rgba(11, 26, 62, 1);
@@ -56,9 +56,9 @@
   font-size: 40px;
 }
 
-.postDesc {
+.postDescx {
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 20px !important;
 
   line-height: 30px;
   color: rgba(79, 79, 79, 1);
@@ -104,7 +104,7 @@
     line-height: 43px;
   }
 
-  .postDesc {
+  .postDescx {
     margin-top: 16px;
     font-size: 16px;
     line-height: 24px;
@@ -149,7 +149,7 @@
     line-height: 43px;
   }
 
-  .postDesc {
+  .postDescx {
     margin-top: 16px;
     font-size: 16px;
     line-height: 24px;
