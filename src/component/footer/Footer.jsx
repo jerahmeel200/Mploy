@@ -48,9 +48,8 @@ const Footer = () => {
                     fontWeight: "500",
                     fontSize: "14px",
                     lineHeight: "28px",
-                    fontFamily: "Montserrat, serif",
                   }}>
-                  &copy; 2023 Mploy. All rights reserved.
+                  &copy; {new Date().getFullYear()} Mploy. All rights reserved.
                 </p>
                 <Image
                   className={styles.socials}
