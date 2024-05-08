@@ -21,6 +21,7 @@ import { useFileUpload } from "@/hooks/api/upload/useUploadFIle";
 import { showErrorToast } from "@/utils/toaster";
 import { isValidEmail } from "@/utils/validateEmail";
 import AlertModal from "@/component/reuseables/AlertModal";
+
 const emptyMsg = (
   <div
     className="w-full 
@@ -204,16 +205,22 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
 
   if (success)
     return (
-      <div className="h-screen w-full flex-col gap-[32px] flex items-center justify-center">
+      <div className="h-screen bg-white w-full flex-col gap-[32px] flex items-center justify-start">
+        <a href="/">
+          <img
+            src="/logo_blue_transparent.png"
+            className="w-[50px] mb-[20px] absolute top-[20px] left-[20px]"
+          />
+        </a>
+
         <img
-          src="/logo_blue_transparent.png"
-          className="w-[50px] mb-[20px] absolute top-[20px] left-[20px]"
+          // src="/complete_task.svg"
+          src="/success-rocket.webp"
+          className="w-full max-w-[400px]"
         />
 
-        <img src="/complete_task.svg" className="w-full max-w-[400px]" />
-
         <div>
-          <h1 className="text-[#013575] text-[40px] font-medium max-w-[800px] text-center">
+          <h1 className="text-[#013575] text-[40px] mt-[-30px] font-medium max-w-[800px] text-center">
             Application Success!
           </h1>
           <h2 className="text-gray-600 text-[18px] max-w-[700px] text-center mt-[10px]">
@@ -227,6 +234,7 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
   return (
     <>
       <AlertModal
+        title="An Error occured!"
         open={showmodal ? true : false}
         message={showmodal}
         handleClose={() => setshowmodal(false)}
@@ -279,8 +287,16 @@ function RecruitmentApplicationFormMain({ campaign_id }) {
           },
         }}
         animate={!globalLoad ? "show" : undefined}>
+        <div className="mt-[10px] ">
+          <button
+            className="text-primary cursor-pointer text-[14px] font-[600] underline"
+            onClick={() => window.history.back()}>
+            Go back
+          </button>
+        </div>
+
         <div
-          className="mt-[40px]  mx-auto    
+          className="mt-[0px]  mx-auto    
            w-[clamp(150px,calc(150/1440*100vw),400px)]
            h-[clamp(50px,calc(50/1440*100vw),400px)]
           bg-gray-200 flex items-center justify-center">

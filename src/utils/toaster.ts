@@ -48,7 +48,7 @@ export const showErrorToast = ({
     | "top-left"
     | "top-right";
 }) => {
-  return toast(`⚠️  ${message}`, {
+  return toast.error(`⚠️  ${message}`, {
     ...toasterProps,
     autoClose,
     position,

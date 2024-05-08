@@ -8,11 +8,13 @@ const AlertModal = ({
   open,
   handleClose = () => null,
   error = true,
+  title = "",
   message = "",
 }: {
   open?: any;
   handleClose?: any;
   error?: boolean;
+  title?: string;
   message?: string;
 }) => {
   const handleOk = () => {};
@@ -39,8 +41,12 @@ const AlertModal = ({
             </div>
           </nav>
           <section className={styles.section}>
-            <img src={image} className="w-[50%]" />
-            <p className=" font-normal  text-[14px] max-w-[600px] text-center mt-[10px]">
+            <img src={image} className="w-[40%]" />
+
+            <h1 className="text-[#413434] text-[40px] font-medium max-w-[800px] text-center mt-[20px]">
+              {title}
+            </h1>
+            <p className=" font-normal text-[#5a5b5f] text-[14px] max-w-[600px] text-center mt-[10px]">
               {message}
             </p>
           </section>
