@@ -45,11 +45,7 @@ const EasySteps = () => {
               </div>
             </div>
           ))}
-          <Button
-            title="Get started"
-            href="https://mploy-dashboard.vercel.app/auth/login"
-            mt="3vh"
-          />
+          <Button title="Get started" href="/contact-us" mt="3vh" />
         </div>
       </div>
     </div>

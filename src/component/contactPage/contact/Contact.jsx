@@ -3,7 +3,46 @@ import React from "react";
 import styles from "./contact.module.css";
 import Button from "@/reuse/Button/Button";
 
+import { useSubmitContactUsForm } from "@/hooks/api/website";
+
 const Contact = () => {
+  const [state, setstate] = React.useState({
+    first_name: "",
+    last_name: "",
+    company_name: "",
+    phone: "",
+    email: "",
+    message: "",
+  });
+
+  const { handleSubmitContactUsForm, loading: updating } =
+    useSubmitContactUsForm();
+  const submitForm = () => {
+    const { first_name, last_name, company_name, phone, email, message } =
+      state;
+
+    handleSubmitContactUsForm({
+      data: {
+        first_name,
+        last_name,
+        company_name,
+        phone,
+        email,
+        message,
+      },
+      cb: () =>
+        setstate({
+          first_name: "",
+          last_name: "",
+          company_name: "",
+          phone: "",
+          email: "",
+          message: "",
+        }),
+    });
+    console.log({ first_name, last_name, company_name, phone, email, message });
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -24,13 +63,23 @@ const Contact = () => {
           </div>
         </div>
         <div className={styles.formContainer}>
-          <form className={styles.form}>
-            <h1 className={styles.formTitle}>How can we help?</h1>
+          <form
+            className={styles.form}
+            onSubmit={(e) => {
+              e.preventDefault();
+              submitForm();
+            }}>
+            <h5 className={styles.formTitle}>How can we help?</h5>
 
             <div className={styles.top}>
               <div className={styles.inputContainer}>
                 <label className={styles.label}>First name</label>
                 <input
+                  required
+                  value={state.first_name}
+                  onChange={(e) =>
+                    setstate((x) => ({ ...x, first_name: e.target.value }))
+                  }
                   className={styles.input}
                   type="text"
                   placeholder="Type here"
@@ -39,6 +88,11 @@ const Contact = () => {
               <div className={styles.inputContainer}>
                 <label className={styles.label}>Last name</label>
                 <input
+                  required
+                  value={state.last_name}
+                  onChange={(e) =>
+                    setstate((x) => ({ ...x, last_name: e.target.value }))
+                  }
                   className={styles.input}
                   type="text"
                   placeholder="Type here"
@@ -47,6 +101,11 @@ const Contact = () => {
               <div className={styles.inputContainer}>
                 <label className={styles.label}>Company name</label>
                 <input
+                  required
+                  value={state.company_name}
+                  onChange={(e) =>
+                    setstate((x) => ({ ...x, company_name: e.target.value }))
+                  }
                   className={styles.input}
                   type="text"
                   placeholder="Type here"
@@ -55,8 +114,13 @@ const Contact = () => {
               <div className={styles.inputContainer}>
                 <label className={styles.label}>Phone</label>
                 <input
+                  required
+                  value={state.phone}
+                  onChange={(e) =>
+                    setstate((x) => ({ ...x, phone: e.target.value }))
+                  }
                   className={styles.input}
-                  type="text"
+                  type="tel"
                   placeholder="Type here"
                 />
               </div>
@@ -66,23 +130,35 @@ const Contact = () => {
               <div className={styles.inputContainer}>
                 <label className={styles.label}>Email</label>
                 <input
+                  required
+                  value={state.email}
+                  onChange={(e) =>
+                    setstate((x) => ({ ...x, email: e.target.value }))
+                  }
                   className={styles.emailInput}
-                  type="text"
+                  type="email"
                   placeholder="Type here"
                 />
               </div>
               <div className={styles.inputContainer}>
                 <label className={styles.label}>Message</label>
-                <input
+                <textarea
+                  required
+                  value={state.message}
+                  onChange={(e) =>
+                    setstate((x) => ({ ...x, message: e.target.value }))
+                  }
                   className={styles.messageInput}
                   type="text"
                   placeholder="Type here"
                 />
               </div>
               <Button
+                loading={updating}
+                disabled={updating}
+                type="submit"
                 width="100%"
                 title="Submit"
-                href="https://mploy-dashboard.vercel.app/auth/login"
                 mt="3vh"
               />
             </div>

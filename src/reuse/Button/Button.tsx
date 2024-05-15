@@ -18,6 +18,7 @@ function Button({
   onClick,
   disabled = false,
   loading = false,
+  type = "button",
 }: {
   width?: string;
   height?: string;
@@ -32,6 +33,7 @@ function Button({
   onClick?: any;
   disabled?: boolean;
   loading?: boolean;
+  type?: "button" | "submit" | "reset";
 }) {
   const router = useRouter();
 
@@ -48,7 +50,8 @@ function Button({
   return (
     <>
       <button
-        onClick={handleClickButton}
+        type={type}
+        onClick={type === "submit" ? undefined : handleClickButton}
         disabled={loading || disabled}
         className="relative rounded px-5 py-2.5 overflow-hidden group bg-green-500  hover:from-green-500 hover:to-green-400 text-white hover:ring-2 hover:ring-offset-2 hover:ring-green-400 transition-all ease-out duration-300"
         //

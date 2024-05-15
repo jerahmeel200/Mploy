@@ -27,12 +27,15 @@ const Footer = () => {
           <div className={styles.links}>
             <div className={styles.list}>
               <Link href="/" className="hover:underline">
+                Home
+              </Link>
+              <Link href="/about-us" className="hover:underline">
                 About Us
               </Link>
-              <Link href="/" className="hover:underline">
+              <Link href="/how-it-works" className="hover:underline">
                 How it works
               </Link>
-              <Link href="/" className="hover:underline">
+              <Link href="/privacy-policy" className="hover:underline">
                 Privacy policy
               </Link>
 
@@ -51,24 +54,32 @@ const Footer = () => {
                   }}>
                   &copy; {new Date().getFullYear()} Mploy. All rights reserved.
                 </p>
-                <Image
-                  className={styles.socials}
-                  src="/x.png"
-                  width={30}
-                  height={30}
-                />
-                <Image
-                  className={styles.socials}
-                  src="/instagram.png"
-                  width={30}
-                  height={30}
-                />
-                <Image
-                  className={styles.socials}
-                  src="/facebook.png"
-                  width={30}
-                  height={30}
-                />
+                <a href="https://twitter.com/WeareMploy" target="_blank">
+                  <Image
+                    className={styles.socials}
+                    src="/x.png"
+                    width={30}
+                    height={30}
+                  />
+                </a>
+                <a href="https://www.instagram.com/mploy.ing/" target="_blank">
+                  <Image
+                    className={styles.socials}
+                    src="/instagram.png"
+                    width={30}
+                    height={30}
+                  />
+                </a>
+                <a
+                  href="https://web.facebook.com/profile.php?id=61556300950639"
+                  target="_blank">
+                  <Image
+                    className={styles.socials}
+                    src="/facebook.png"
+                    width={30}
+                    height={30}
+                  />
+                </a>
               </div>
             </div>
             <div></div>

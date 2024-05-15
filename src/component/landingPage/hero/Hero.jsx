@@ -27,11 +27,7 @@ const Hero = () => {
             </div> */}
 
             <Slide direction={"left"} duration={2000} triggerOnce={true}>
-              <Button
-                title="Get started"
-                href="https://mploy-dashboard.vercel.app/auth/login"
-                mt="3vh"
-              />
+              <Button title="Get started" href="/contact-us" mt="3vh" />
             </Slide>
           </div>
           <div className={styles.imgContainer}>
