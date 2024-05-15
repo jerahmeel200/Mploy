@@ -35,9 +35,6 @@ const Footer = () => {
               <Link href="/how-it-works" className="hover:underline">
                 How it works
               </Link>
-              <Link href="/privacy-policy" className="hover:underline">
-                Privacy policy
-              </Link>
 
               <div
                 style={{
@@ -54,6 +51,7 @@ const Footer = () => {
                   }}>
                   &copy; {new Date().getFullYear()} Mploy. All rights reserved.
                 </p>
+
                 <a href="https://twitter.com/WeareMploy" target="_blank">
                   <Image
                     className={styles.socials}
@@ -82,7 +80,21 @@ const Footer = () => {
                 </a>
               </div>
             </div>
-            <div></div>
+          </div>
+
+          <div>
+            <div className={styles.list}>
+              <Link href="/terms-and-conditions" className="hover:underline">
+                Terms & Conditions
+              </Link>
+
+              <Link href="/privacy-policy" className="hover:underline">
+                Privacy policy
+              </Link>
+              <Link href="/cookie-policy" className="hover:underline">
+                Cookie policy
+              </Link>
+            </div>
           </div>
         </div>
       </div>
