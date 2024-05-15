@@ -43,7 +43,9 @@ const Navbar = () => {
           <div className={styles.links}>
             {navLinks.map((item) => (
               <Link href={item.link} key={item.id}>
-                <div className={styles.link}>{item.title}</div>
+                <div className={"hover:underline text-[#0b1a3e]"}>
+                  {item.title}
+                </div>
               </Link>
             ))}
             <Button
