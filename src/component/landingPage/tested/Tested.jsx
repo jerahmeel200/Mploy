@@ -41,7 +41,7 @@ const Tested = () => {
   return (
     <section>
       <div className={styles.main}>
-        <h1 className={styles.title}>Tested and trusted </h1>
+        <h1 className={styles.title}>Tested & Trusted </h1>
         <br />
         <p className="max-w-[700px] mx-auto text-center text-[20px]">
           With a proven track record of successful hires, we ensure a seamless

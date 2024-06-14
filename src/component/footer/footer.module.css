@@ -3,6 +3,7 @@
   padding-left: 50px;
   padding-right: 50px;
 }
+
 .container {
   padding: 50px 0px;
   display: flex;
@@ -47,6 +48,8 @@
   display: flex;
   justify-content: flex-end;
   gap: 100px;
+
+  @apply w-auto flex flex-wrap justify-end;
 }
 .btn {
   margin-top: 30px;

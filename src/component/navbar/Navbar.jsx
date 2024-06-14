@@ -7,6 +7,7 @@ import Link from "next/link";
 
 import MobileDrawer from "./MobileDrawer";
 import Button from "@/reuse/Button/Button";
+import { usePathname } from "next/navigation";
 const Navbar = () => {
   const navLinks = [
     {
@@ -30,7 +31,8 @@ const Navbar = () => {
       link: "/contact-us",
     },
   ];
-
+  const pathname = usePathname();
+  console.log("pathname", pathname);
   return (
     <>
       <style jsx>{``}</style>
@@ -38,16 +40,20 @@ const Navbar = () => {
       <div className={styles.container}>
         <div className={styles.wrapper}>
           <Link href={"/"}>
-            <img src="/logo_blue_transparent_new.webp" className="w-[180px]" />
+            <img src="/logo_blue_transparent_new.webp" className="w-[160px]" />
           </Link>
           <div className={styles.links}>
-            {navLinks.map((item) => (
-              <Link href={item.link} key={item.id}>
-                <div className={"hover:underline text-[#0b1a3e]"}>
-                  {item.title}
-                </div>
-              </Link>
-            ))}
+            {navLinks.map((item) => {
+              const active = pathname === item?.link;
+              return (
+                <Link href={item.link} key={item.id}>
+                  <span
+                    className={`hover:underline ${!active ? "text-[#333333]" : "text-[#2F6BF6]"}`}>
+                    {item.title}
+                  </span>
+                </Link>
+              );
+            })}
             <Button
               title="Log in"
               href="https://mploy-dashboard.vercel.app/auth/login"

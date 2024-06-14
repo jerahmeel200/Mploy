@@ -35,54 +35,8 @@ const Footer = () => {
               <Link href="/how-it-works" className="hover:underline">
                 How it works
               </Link>
-
-              <div
-                style={{
-                  display: "flex",
-                  gap: "20px",
-                  marginTop: "100px",
-                  flexWrap: "wrap",
-                }}>
-                <p
-                  style={{
-                    fontWeight: "500",
-                    fontSize: "14px",
-                    lineHeight: "28px",
-                  }}>
-                  &copy; {new Date().getFullYear()} Mploy. All rights reserved.
-                </p>
-
-                <a href="https://twitter.com/WeareMploy" target="_blank">
-                  <Image
-                    className={styles.socials}
-                    src="/x.png"
-                    width={30}
-                    height={30}
-                  />
-                </a>
-                <a href="https://www.instagram.com/mploy.ing/" target="_blank">
-                  <Image
-                    className={styles.socials}
-                    src="/instagram.png"
-                    width={30}
-                    height={30}
-                  />
-                </a>
-                <a
-                  href="https://web.facebook.com/profile.php?id=61556300950639"
-                  target="_blank">
-                  <Image
-                    className={styles.socials}
-                    src="/facebook.png"
-                    width={30}
-                    height={30}
-                  />
-                </a>
-              </div>
             </div>
-          </div>
 
-          <div>
             <div className={styles.list}>
               <Link href="/terms-and-conditions" className="hover:underline">
                 Terms & Conditions
@@ -94,6 +48,51 @@ const Footer = () => {
               <Link href="/cookie-policy" className="hover:underline">
                 Cookie policy
               </Link>
+            </div>
+
+            <div
+              style={{
+                display: "flex",
+                gap: "20px",
+                flexWrap: "wrap",
+                width: "100%",
+                justifyContent: "flex-end",
+              }}>
+              <p
+                style={{
+                  fontWeight: "500",
+                  fontSize: "14px",
+                  lineHeight: "28px",
+                }}>
+                &copy; {new Date().getFullYear()} Mploy. All rights reserved.
+              </p>
+
+              <a href="https://twitter.com/WeareMploy" target="_blank">
+                <Image
+                  className={styles.socials}
+                  src="/x.png"
+                  width={30}
+                  height={30}
+                />
+              </a>
+              <a href="https://www.instagram.com/mploy.ing/" target="_blank">
+                <Image
+                  className={styles.socials}
+                  src="/instagram.png"
+                  width={30}
+                  height={30}
+                />
+              </a>
+              <a
+                href="https://web.facebook.com/profile.php?id=61556300950639"
+                target="_blank">
+                <Image
+                  className={styles.socials}
+                  src="/facebook.png"
+                  width={30}
+                  height={30}
+                />
+              </a>
             </div>
           </div>
         </div>

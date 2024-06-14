@@ -55,10 +55,16 @@ const Contact = () => {
           </p>
           <div className={styles.info}>
             <p>
-              Contact us: <span className={styles.blue}>+234 682992000</span>
+              Contact us:{" "}
+              <a href="tel:+447884876745" className={styles.blue}>
+                +44 7884876745{" "}
+              </a>
             </p>
             <p>
-              Email us: <span className={styles.blue}> info@mploy.com</span>
+              Email us:{" "}
+              <a href="malito:info@mploy.com" className={styles.blue}>
+                info@mploy.com
+              </a>
             </p>
           </div>
         </div>
