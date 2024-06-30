@@ -9,7 +9,7 @@ const navData = [
   { link: "/how-it-works", title: "How it works" },
   { link: "/contact-us", title: "Contact Us" },
   {
-    link: "https://mploy-dashboard.vercel.app/auth/login",
+    link: process.env.FRONTEND_DASHBOARD_URL + "/auth/login",
     title: "Login",
     topPadding: true,
   },

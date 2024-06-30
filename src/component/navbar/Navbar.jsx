@@ -48,7 +48,9 @@ const Navbar = () => {
               return (
                 <Link href={item.link} key={item.id}>
                   <span
-                    className={`hover:underline ${!active ? "text-[#333333]" : "text-[#2F6BF6]"}`}>
+                    className={`hover:underline ${
+                      !active ? "text-[#333333]" : "text-[#2F6BF6]"
+                    }`}>
                     {item.title}
                   </span>
                 </Link>
@@ -56,7 +58,7 @@ const Navbar = () => {
             })}
             <Button
               title="Log in"
-              href="https://mploy-dashboard.vercel.app/auth/login"
+              href={process.env.FRONTEND_DASHBOARD_URL + "/auth/login"}
             />
           </div>
 

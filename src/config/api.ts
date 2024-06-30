@@ -1,7 +1,5 @@
 const api = (inProduction: boolean) => {
-  const BASE_URL_LINK = inProduction
-    ? "https://mploy-backend.onrender.com/api/staging/v1"
-    : "http://localhost:5001/api/staging/v1";
+  const BASE_URL_LINK = process.env.BACKEND_API_URL;
 
   return {
     recruitment: BASE_URL_LINK + "/recruitment",
